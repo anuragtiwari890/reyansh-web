@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyansh Group | Premier Real Estate Developer & Redevelopment in Mumbai</title>
+    <meta name="description" content="Reyansh Group is a leading real estate developer with 25+ years of experience in Mumbai, Vasai-Virar, and Mira Bhayandar. Specializing in premium residential, commercial, and redevelopment projects.">
+    <meta name="keywords" content="Real Estate Developer Mumbai, Property Redevelopment Borivali Malad, Vasai-Virar New Residential Projects, Reyansh Group">
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B1E3F', // Deep Burgundy/Crimson
+                            dark: '#6A162F',
+                            light: '#A62A4F'
+                        },
+                        accent: {
+                            DEFAULT: '#D4AF37', // Gold/Champagne
+                            light: '#E6C96A'
+                        },
+                        dark: {
+                            DEFAULT: '#0F172A', // Slate Dark
+                            light: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles for Animations -->
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tab-btn.active {
+            border-bottom-color: #8B1E3F;
+            color: #8B1E3F;
+            font-weight: 600;
+        }
+    </style>
+
+    <!-- Schema.org Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Reyansh Group",
+      "image": "https://images.unsplash.com/photo-1560518884-ce5882228c91?auto=format&fit=crop&w=800&q=80",
+      "@id": "",
+      "url": "https://www.reyanshgroup.com",
+      "telephone": "",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "A/101, Shivkari CHSL, Kasturba Road No. 1",
+        "addressLocality": "Borivali East, Mumbai",
+        "postalCode": "400066",
+        "addressCountry": "IN"
+      },
+      "foundingDate": "1999",
+      "description": "Where Old Stories Meet New Beginnings! Real estate developer and redevelopment experts in Mumbai, Vasai-Virar, and Mira Bhayandar."
+    }
+    </script>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased overflow-x-hidden">
+
+    <!-- 1. Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-sm glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Placeholder Logo -->
+                    <svg class="w-10 h-10 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                    </svg>
+                    <span class="font-serif font-bold text-2xl tracking-wider text-brand">REYANSH</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#portfolio" class="text-gray-600 hover:text-brand font-medium transition-colors">Portfolio</a>
+                    <a href="#redevelopment" class="text-gray-600 hover:text-brand font-medium transition-colors">Redevelopment</a>
+                    <a href="#safety" class="text-gray-600 hover:text-brand font-medium transition-colors">Trust & Safety</a>
+                    <a href="#visionaries" class="text-gray-600 hover:text-brand font-medium transition-colors">Leadership</a>
+                    <a href="#contact" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
+                        Request a Call Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pb-32 flex items-center min-h-[90vh]">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Real Estate Facade" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Hero Copy -->
+            <div class="lg:w-3/5 text-white fade-in">
+                <span class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-4">EST. 1999</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
+                    Where Old Stories Meet <span class="text-accent">New Beginnings!</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                    Evolving lifestyles by transforming old addresses into future-ready living. With over two decades of trust, we don't just redevelop buildings—we recreate the way you live.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#portfolio" class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Explore Projects</a>
+                    <a href="#redevelopment" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Partner With Us</a>
+                </div>
+            </div>
+
+            <!-- Lead Capture Form -->
+            <div class="lg:w-2/5 w-full max-w-md fade-in" style="transition-delay: 0.2s;">
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-brand">
+                    <h3 class="text-2xl font-bold text-dark mb-2">Start Your Journey</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Register your interest for buying or redevelopment.</p>
+                    
+                    <form id="leadForm" class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
+                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all bg-white">
+                                <option value="">Select an option</option>
+                                <option value="buying">Buying a New Home</option>
+                                <option value="redevelopment">Society Redevelopment</option>
+                                <option value="investment">Real Estate Investment</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-dark hover:bg-dark-light text-white font-bold py-3 px-4 rounded-md transition-colors mt-2">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Corporate Track Record -->
+    <section id="stats" class="py-16 bg-white border-b border-gray-200 relative z-20 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-xl shadow-xl">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2 font-serif counter" data-target="25">0</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Years of Existence</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2 font-serif counter" data-target="40">0</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Projects Delivered</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2 font-serif"><span class="counter" data-target="5">0</span><span class="text-3xl">M+</span></div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Sq. Ft. Developed</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2 font-serif"><span class="counter" data-target="4000">0</span>+</div>
+                    <div class="text-gray-600 font-medium uppercase tracking-wide text-sm">Happy Families</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Interactive Project Portfolio -->
+    <section id="portfolio" class="py-24 bg-slate-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">The Property Build Book</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">A snapshot of our ongoing and completed projects across key geographies.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center border-b border-gray-300 mb-10 gap-2 md:gap-8">
+                <button class="tab-btn active pb-4 px-4 text-lg font-medium border-b-2 border-transparent hover:text-brand transition-colors focus:outline-none" onclick="openTab('tab-vasai')">Vasai - Virar Belt</button>
+                <button class="tab-btn pb-4 px-4 text-lg font-medium border-b-2 border-transparent text-gray-500 hover:text-brand transition-colors focus:outline-none" onclick="openTab('tab-mira')">Mira Bhayandar Belt</button>
+                <button class="tab-btn pb-4 px-4 text-lg font-medium border-b-2 border-transparent text-gray-500 hover:text-brand transition-colors focus:outline-none" onclick="openTab('tab-mumbai')">Mumbai Redevelopment</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="tab-vasai" class="tab-content">
+                <div class="grid md:grid-cols-2 gap-8 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div>
+                        <h3 class="text-2xl font-bold text-brand mb-6">Vasai - Virar Belt</h3>
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-accent">
+                                <h4 class="font-bold text-dark text-lg mb-2">Ongoing Projects - 4</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>8,00,000 sq. ft</li>
+                                    <li>850+ units</li>
+                                    <li>Residential & Commercial</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-brand">
+                                <h4 class="font-bold text-dark text-lg mb-2">Successfully Completed</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>40+ projects</li>
+                                    <li>5 million sq. ft.</li>
+                                    <li>3000+ units</li>
+                                    <li>Residential, Commercial & Industrial</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-inner">
+                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Vasai Virar Commercial Buildings" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-mira" class="tab-content hidden">
+                <div class="grid md:grid-cols-2 gap-8 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-inner order-2 md:order-1">
+                         <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Mira Bhayandar Residential Apartments" class="absolute inset-0 w-full h-full object-cover">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-2xl font-bold text-brand mb-6">Mira Bhayandar Belt</h3>
+                        <div class="space-y-6">
+                            <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-accent">
+                                <h4 class="font-bold text-dark text-lg mb-2">Ongoing Projects - 2</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>3,24,000 sq. ft</li>
+                                    <li>190 units</li>
+                                    <li>Residential</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-brand">
+                                <h4 class="font-bold text-dark text-lg mb-2">Successfully Completed</h4>
+                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                    <li>2 projects</li>
+                                    <li>1,31,000 sq. ft.</li>
+                                    <li>109 units</li>
+                                    <li>Residential</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-mumbai" class="tab-content hidden">
+                 <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Malad -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-brand hover:-translate-y-1 transition-transform">
+                        <h4 class="font-bold text-xl text-dark mb-1">Malad</h4>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-bold px-2 py-1 rounded mb-4">Ongoing</span>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Redevelopment</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> G+15 storey</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 27,000 sq. ft</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Residential & Commercial</li>
+                        </ul>
+                    </div>
+                    <!-- Borivali -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-brand hover:-translate-y-1 transition-transform">
+                        <h4 class="font-bold text-xl text-dark mb-1">Borivali</h4>
+                        <span class="inline-block bg-accent/20 text-accent text-xs font-bold px-2 py-1 rounded mb-4">Ongoing</span>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Redevelopment</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> G+18 storey</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 30,000 sq. ft</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Residential</li>
+                        </ul>
+                    </div>
+                    <!-- Vile Parle -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-accent hover:-translate-y-1 transition-transform">
+                        <h4 class="font-bold text-xl text-dark mb-1">Vile Parle</h4>
+                        <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 rounded mb-4">Upcoming</span>
+                        <ul class="text-gray-600 space-y-2 text-sm">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Redevelopment of Triveni CHSL</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-brand" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Residential & Commercial</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Featured Landmarks Showcase -->
+    <section class="py-20 bg-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-dark mb-12">Landmarks in the Making</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=600&q=80" alt="Reyansh Infinity Malad West" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Reyansh Infinity</h3>
+                        <p class="text-accent text-sm font-medium">Malad West</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=600&q=80" alt="Reyansh Vedanta Borivali East" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Reyansh Vedanta</h3>
+                        <p class="text-accent text-sm font-medium">Borivali East</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=600&q=80" alt="Veer One Vasai East" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Veer One</h3>
+                        <p class="text-accent text-sm font-medium">Vasai East</p>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=80" alt="Ankur Grandeur Virar East" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Ankur Grandeur</h3>
+                        <p class="text-accent text-sm font-medium">Virar East</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+                <!-- Card 5 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&w=600&q=80" alt="Prithvi Pride Mira Road" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Prithvi Pride II & III</h3>
+                        <p class="text-accent text-sm font-medium">Mira Road</p>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1f52d36158?auto=format&fit=crop&w=600&q=80" alt="Shakti Sunny Residency Virar West" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Shakti Sunny Residency</h3>
+                        <p class="text-accent text-sm font-medium">Virar West</p>
+                    </div>
+                </div>
+                <!-- Card 7 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-lg h-80">
+                    <img src="https://images.unsplash.com/photo-1542314831-c53cd3b822d5?auto=format&fit=crop&w=600&q=80" alt="Shiv Krupa Complex Vasai Taluka" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-xl font-bold text-white mb-1">Shiv Krupa Complex</h3>
+                        <p class="text-accent text-sm font-medium">Vasai Taluka</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Core Pillars -->
+    <section id="pillars" class="py-24 bg-slate-100 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">Our Core Pillars</h2>
+                <p class="text-gray-600 text-lg">The foundation that shapes every project we build.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border-t-4 border-brand">
+                    <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-brand">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Integrity</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• Transparent communication</li>
+                        <li>• Ethical, responsible practices</li>
+                        <li>• Full regulatory compliance</li>
+                        <li>• Honest commitments</li>
+                        <li>• Trust-focused relationships</li>
+                    </ul>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border-t-4 border-accent">
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-accent">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Excellence</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• Superior construction quality</li>
+                        <li>• Premium materials & finishes</li>
+                        <li>• Expert engineering & consultants</li>
+                        <li>• Multi-stage quality checks</li>
+                        <li>• Delivering beyond expectations</li>
+                    </ul>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border-t-4 border-brand">
+                    <div class="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-brand">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Innovation</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• Future-ready architecture</li>
+                        <li>• Smart space optimisation</li>
+                        <li>• Modern materials & technology</li>
+                        <li>• Sustainable design focus</li>
+                        <li>• Luxury blended with practicality</li>
+                    </ul>
+                </div>
+                <!-- Pillar 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow border-t-4 border-accent">
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-accent">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-4">Commitment</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• On-time delivery</li>
+                        <li>• Clear project updates</li>
+                        <li>• Dedicated society support</li>
+                        <li>• Smooth handover process</li>
+                        <li>• Long-term post-possession care</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Risk Protection & Financial Safety -->
+    <section id="safety" class="py-24 bg-dark text-white fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Risk Protection and Financial Safety</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6">The question is not "How big is the builder?" <br/><span class="text-brand-light">The question is "How safe are we with this builder?"</span></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold text-accent mb-6 flex items-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        Financial Security
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-2">Corpus & Rent Protection</h4>
+                            <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                                <li>Clear rent escalation</li>
+                                <li>Delay compensation clause</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-2">Project Funding Structure</h4>
+                            <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                                <li>Self-funded + institutional finance mix</li>
+                                <li>No dependency on society members' funds</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-2">Insurance Coverage</h4>
+                            <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                                <li>Construction risk insurance</li>
+                                <li>Workmen & third-party liability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold text-brand-light mb-6 flex items-center gap-3">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>
+                        Legal Compliance
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-2">Legal Safeguards</h4>
+                            <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                                <li>Tripartite agreements</li>
+                                <li>Conveyance & title clarity checks before execution</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white mb-2">RERA & Statutory Compliance</h4>
+                            <ul class="text-gray-400 space-y-1 text-sm list-disc list-inside">
+                                <li>Timelines aligned with RERA milestones</li>
+                                <li>Penalty clauses for developer delay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. The Redevelopment Vertical -->
+    <section id="redevelopment" class="py-24 bg-white relative overflow-hidden fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand mb-6 leading-tight">
+                        Redevelop with Reyansh Group
+                    </h2>
+                    <h3 class="text-2xl font-bold text-dark mb-8">Why Redevelopment is the Future?</h3>
+                    
+                    <ul class="space-y-4 mb-10 text-lg text-gray-700">
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Ageing structures need renewal
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Smarter use of limited land
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Modern living with zero investment
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Higher property value
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Better, safer, greener construction
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-accent">✔</span> Supported by policy & demand
+                        </li>
+                    </ul>
+
+                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-dark">
+                        <p class="text-xl font-serif italic text-dark mb-4">
+                            "At Reyansh Group, we don't just redevelop buildings. We reimagine, redesign and recreate the way you live."
+                        </p>
+                        <p class="text-2xl font-bold text-brand">It's not Redevelopment. It's Recreation.</p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Future Ready Architecture" class="rounded-2xl shadow-2xl relative z-10">
+                    <div class="absolute -top-6 -right-6 w-full h-full border-4 border-accent rounded-2xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Visionaries (Leadership) -->
+    <section id="visionaries" class="py-24 bg-slate-50 fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-center text-dark mb-16">Our Visionaries</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Leader 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-24 h-24 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Mr. Mahendra Mishra" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Mr. Mahendra Mishra</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            With 25+ years of experience in the Vasai-Virar real estate market, Mr. Mahendra Mishra is a trusted name synonymous with quality, precision, and integrity. His deep understanding of evolving community needs and a strong legacy of credibility make him a key pillar of Reyansh Group, bringing experience, stability, and trust to every project.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-24 h-24 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Mrs. Suman Sheth" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Mrs. Suman Sheth</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Building since 1999, Mrs. Suman Sheth has played a pivotal role in shaping the Vasai-Virar skyline through thoughtful, customer-focused developments. Known for her consistent, hands-on approach and people-centric vision, she is a core pillar of Reyansh Group, bringing experience, foresight, and a human touch to every project.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-24 h-24 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80" alt="Mr. Karan Sinai" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Mr. Karan Sinai</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Entering real estate in 2022, Mr. Karan Sinai brings a fresh, modern, branding-driven perspective. He co-developed a 2,00,000 sq. ft. residential-cum-commercial project in Virar and initiated the vision of uniting all strengths under one brand-Reyansh Group. Under this cohesive banner, the team has acquired multiple projects in Mumbai.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Leader 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-24 h-24 rounded-full bg-slate-200 flex-shrink-0 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="Mr. Ashvin Jain" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-brand mb-2">Mr. Ashvin Jain</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            With over a decade of experience in financial planning and capital management, Mr. Ashvin Jain brings sharp financial intelligence to Reyansh Group. His analytical approach and disciplined financial oversight play a vital role in structuring sustainable projects, optimizing fund flows, and ensuring strong financial governance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8 border-t-4 border-brand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12 border-b border-slate-700 pb-12">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <svg class="w-8 h-8 text-brand-light" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                        </svg>
+                        <span class="font-serif font-bold text-2xl tracking-wider text-white">REYANSH</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Where Old Stories Meet New Beginnings! Leading developers and redevelopment experts reshaping the skyline since 1999.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#portfolio" class="hover:text-brand-light transition-colors">Our Portfolio</a></li>
+                        <li><a href="#redevelopment" class="hover:text-brand-light transition-colors">Redevelopment</a></li>
+                        <li><a href="#safety" class="hover:text-brand-light transition-colors">Trust & Safety</a></li>
+                        <li><a href="#visionaries" class="hover:text-brand-light transition-colors">Leadership Team</a></li>
+                    </ul>
+                </div>
+
+                <!-- Corporate Office -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Corporate Office</h4>
+                    <div class="flex items-start gap-3 text-gray-400 mb-4">
+                        <svg class="w-6 h-6 flex-shrink-0 text-accent mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <p class="leading-relaxed">
+                            A/101, Shivkari CHSL, <br>
+                            Kasturba Road No. 1, <br>
+                            Borivali East, Mumbai - 400 066
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; <span id="year"></span> Reyansh Group. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 text-xs">Developed for Real Estate Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // 1. Dynamic Year Initialization
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 2. Tab Functionality
+        function openTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Remove active state from all buttons
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-brand', 'text-brand', 'font-semibold');
+                el.classList.add('border-transparent', 'text-gray-500');
+            });
+            
+            // Show requested content
+            document.getElementById(tabId).classList.remove('hidden');
+            
+            // Add active state to clicked button
+            event.currentTarget.classList.remove('border-transparent', 'text-gray-500');
+            event.currentTarget.classList.add('active', 'border-brand', 'text-brand', 'font-semibold');
+        }
+
+        // 3. Count-up Animation for Statistics
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // lower is slower
+        
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animate, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                animate();
+            });
+        }
+
+        // 4. Scroll Animations (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counters if stats section hits
+                    if(entry.target.id === 'stats') {
+                        animateCounters();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, #stats').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 5. Sticky Nav Shadow on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
