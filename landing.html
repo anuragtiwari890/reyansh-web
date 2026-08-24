@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyansh Group | Your Trust. Our Promise.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B1E3F',
+                            dark: '#6A162F',
+                            light: '#A62A4F'
+                        },
+                        accent: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E6C96A'
+                        },
+                        dark: {
+                            DEFAULT: '#0F172A',
+                            light: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-nav shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- TODO: Replace SVG with actual Logo img -->
+                    <!-- <img src="path/to/logo.png" alt="Reyansh Group" class="h-10"> -->
+                    <svg class="w-10 h-10 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                    </svg>
+                    <span class="font-serif font-bold text-2xl tracking-wider text-brand">REYANSH</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#story" class="text-gray-600 hover:text-brand font-medium transition-colors">Our Story</a>
+                    <a href="#vedanta" class="text-brand font-bold transition-colors">Reyansh Vedanta <span class="ml-1 inline-block px-2 py-0.5 bg-accent/20 text-accent text-xs rounded-full">NEW</span></a>
+                    <a href="#portfolio" class="text-gray-600 hover:text-brand font-medium transition-colors">Portfolio</a>
+                    <a href="#contact" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
+                        Request a Call Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pb-32 flex items-center min-h-[90vh]">
+        <div class="absolute inset-0 z-0">
+            <!-- TODO: User background image replacement -->
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Real Estate" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/40"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-3/5 text-white" data-aos="fade-up" data-aos-duration="1000">
+                <span class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-4">REYANSH GROUP</span>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
+                    Your trust.<br><span class="text-accent">Our promise.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+                    More Than Buildings. A Future Built With Purpose. Every address holds a story - of families, aspirations, memories and the promise of what lies ahead.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#vedanta" class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Discover Vedanta</a>
+                    <a href="#story" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Our Legacy</a>
+                </div>
+            </div>
+
+            <div class="lg:w-2/5 w-full max-w-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-brand">
+                    <h3 class="text-2xl font-bold text-dark mb-2">Register Interest</h3>
+                    <p class="text-gray-500 mb-6 text-sm">Connect with our experts today.</p>
+                    
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="+91">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
+                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all bg-white">
+                                <option value="">Select an option</option>
+                                <option value="vedanta">Reyansh Vedanta</option>
+                                <option value="buying">Buying a New Home</option>
+                                <option value="redevelopment">Society Redevelopment</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-dark hover:bg-dark-light text-white font-bold py-3 px-4 rounded-md transition-colors mt-2">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats / At a glance -->
+    <section class="py-12 bg-brand text-white relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-brand-light">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="25">0</span>+</div>
+                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Years of Perfection</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="40">0</span>+</div>
+                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Icons Delivered</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="4000">0</span>+</div>
+                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Happy Families</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="5">0</span>+ <span class="text-2xl">MLN</span></div>
+                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Sq. Ft. Delivered</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark mb-6 leading-tight">
+                        A Legacy of Experience.<br>
+                        <span class="text-brand">A Vision for Tomorrow.</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Reyansh Group brings together the strength of decades of on-ground real estate experience with a contemporary vision for the future of urban living.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Our roots trace back to 1999, when the foundation was laid with a commitment to deliver dependable homes. Over the years, this has evolved into a strong track record of completed projects and a deeper understanding of how families live, grow and aspire.
+                    </p>
+                    <div class="border-l-4 border-accent pl-6 py-2">
+                        <p class="text-xl font-serif italic text-dark">
+                            "When we build with integrity, we create more than homes. We create trust that lasts for generations."
+                        </p>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Our Story" class="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand/20 rounded-2xl z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotlight: Reyansh Vedanta -->
+    <section id="vedanta" class="py-24 bg-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/90 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-accent font-bold tracking-widest uppercase text-sm mb-4 block" data-aos="fade-up">Introducing Our Masterpiece</span>
+            <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
+                Reyansh Vedanta
+            </h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
+                Rising majestically in Borivali East, a new landmark of thoughtful living designed for those who seek the extraordinary.
+            </p>
+            
+            <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-12 group" data-aos="zoom-in" data-aos-delay="300">
+                <!-- TODO: Replace with Reyansh Vedanta actual rendering -->
+                <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1200&q=80" alt="Reyansh Vedanta Borivali East" class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex items-end">
+                    <div class="p-8 md:p-12 text-left w-full">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">Vedanta</h3>
+                                <p class="text-accent text-lg font-medium">Borivali East, Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="400">
+                <!-- Link to the separate webpage to be created -->
+                <a href="vedanta.html" class="inline-block bg-accent hover:bg-accent-light text-dark px-10 py-4 rounded-md font-bold text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-1">
+                    Explore Reyansh Vedanta
+                </a>
+                <p class="mt-4 text-gray-400 text-sm">Detailed dedicated webpage coming soon.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pillars of Strength -->
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">Our Pillars of Strength</h2>
+                <p class="text-gray-600 text-lg">Every Reyansh development is shaped by five defining pillars.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="text-xl font-bold text-dark mb-3">Legacy</h3>
+                    <p class="text-gray-600 text-sm">Experience that has been earned over time and proven through delivery.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-dark mb-3">Trust</h3>
+                    <p class="text-gray-600 text-sm">From blueprint to handover, a seamless, high-quality delivery model.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-dark mb-3">Thoughtful Living</h3>
+                    <p class="text-gray-600 text-sm">Spaces designed around people, families and evolving lifestyles.</p>
+                </div>
+                <!-- Pillar 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-dark mb-3">Quality</h3>
+                    <p class="text-gray-600 text-sm">Attention to planning, materials, engineering and long-term performance.</p>
+                </div>
+                <!-- Pillar 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="text-xl font-bold text-dark mb-3">Progress</h3>
+                    <p class="text-gray-600 text-sm">A future-facing approach to redevelopment, growth and better urban living.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Landmarks -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Landmarks in the Making</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">A Portfolio Shaped for the Future</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Our ongoing developments represent the next phase of the Reyansh journey - projects designed with a sharper understanding of modern aspirations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="0">
+                    <!-- TODO: Replace image -->
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Reyansh Infinity" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-1">Reyansh Infinity</h3>
+                        <p class="text-accent font-medium">Malad West</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="100">
+                    <!-- TODO: Replace image -->
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Veer One" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-1">Veer One</h3>
+                        <p class="text-accent font-medium">Vasai East</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="200">
+                    <!-- TODO: Replace image -->
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80" alt="Shiv Krupa Complex" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-1">Shiv Krupa Complex</h3>
+                        <p class="text-accent font-medium">Vasai Taluka</p>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="300">
+                    <!-- TODO: Replace image -->
+                    <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&w=800&q=80" alt="Ankur Grandeur" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-1">Ankur Grandeur</h3>
+                        <p class="text-accent font-medium">Virar East</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-brand text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-brand-light pb-12">
+                
+                <div class="lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <!-- TODO: Replace with white logo version -->
+                        <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                        </svg>
+                        <span class="font-serif font-bold text-2xl tracking-wider text-white">REYANSH</span>
+                    </div>
+                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h4>
+                    <div class="space-y-4 text-white">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <p class="text-sm">
+                                A/101, Shivkari CHSL, <br>
+                                Kasturba Road No. 1, <br>
+                                Borivali (E), Mumbai - 400 066
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <a href="mailto:info@reyanshgroup.co.in" class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            <a href="https://www.reyanshgroup.co.in" target="_blank" class="text-sm hover:text-white transition-colors">www.reyanshgroup.co.in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-white text-sm">
+                        <li><a href="#story" class="hover:text-gray-300 transition-colors">Our Story</a></li>
+                        <li><a href="#vedanta" class="hover:text-gray-300 transition-colors">Reyansh Vedanta</a></li>
+                        <li><a href="#portfolio" class="hover:text-gray-300 transition-colors">Landmarks</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center text-white text-sm flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; <span id="year"></span> Reyansh Group. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 text-xs text-white/70">Developed for Real Estate Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        // Lower number of steps makes the animation much quicker
+        const steps = 40; 
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        // Calculate increment based on fixed steps so they all finish around the same time
+                        const inc = target / steps;
+                        
+                        const updateCount = () => {
+                            const count = +counter.innerText;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 15);
+                            } else {
+                                // Add comma formatting for numbers >= 1000
+                                counter.innerText = target >= 1000 ? target.toLocaleString() : target;
+                            }
+                        };
+                        updateCount();
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.bg-brand.text-white');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
