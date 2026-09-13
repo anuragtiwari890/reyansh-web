@@ -83,30 +83,65 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pb-32 flex items-center min-h-[90vh]">
-        <div class="absolute inset-0 z-0">
-            <!-- TODO: Replace with the happy family / calm background image from brochure -->
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Come home to calm" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/70 to-transparent"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="lg:w-1/2 text-white" data-aos="fade-right" data-aos-duration="1000">
-                <span class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-6">DAULAT NAGAR, BORIVALI EAST</span>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
-                    Come home <br><span class="text-accent italic font-light">to Calm</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-xl font-light">
-                    A life where calm belongs to your everyday.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#highlights" class="bg-accent hover:bg-accent-light text-dark px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Explore Project</a>
-                    <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Download Brochure</a>
+    <!-- Interactive Door Scroll Hero Section -->
+    <div id="door-scroll-container" class="relative h-[300vh] bg-dark">
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-dark">
+            
+            <!-- The New Place (Hero Content) -->
+            <div class="absolute inset-0 z-0 scale-110 transition-transform duration-1000 ease-out" id="hero-content">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Come home to calm" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-transparent"></div>
+                
+                <div class="absolute inset-0 flex items-center z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
+                    <div class="lg:w-1/2 text-white">
+                        <span id="hero-tag" class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out">DAULAT NAGAR, BORIVALI EAST</span>
+                        <h1 id="hero-title" class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6 opacity-0 translate-y-8 transition-all duration-1000 delay-200 ease-out">
+                            Come home <br><span class="text-accent italic font-light">to Calm</span>
+                        </h1>
+                        <p id="hero-desc" class="text-xl md:text-2xl text-gray-200 mb-8 max-w-xl font-light opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out">
+                            A life where calm belongs to your everyday.
+                        </p>
+                        <div id="hero-actions" class="flex flex-wrap gap-4 opacity-0 translate-y-8 transition-all duration-1000 delay-500 ease-out">
+                            <a href="#highlights" class="bg-accent hover:bg-accent-light text-dark px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Explore Project</a>
+                            <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Download Brochure</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- The Arch and Doors -->
+            <div id="door-arch" class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform" style="box-shadow: 0 0 0 150vmax #0F172A;">
+                
+                <!-- Door Frame Inner Shadow for Depth -->
+                <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-30 pointer-events-none rounded-t-full"></div>
+
+                <!-- Left Door -->
+                <div id="door-left" class="absolute top-0 left-0 w-1/2 h-full bg-slate-800 border-r border-accent shadow-[inset_-15px_0_30px_rgba(0,0,0,0.6)] origin-left will-change-transform flex items-center justify-end pr-3 md:pr-5 z-20">
+                    <!-- Door details -->
+                    <div class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tl-full rounded-bl-sm opacity-50"></div>
+                    <!-- Handle -->
+                    <div class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
+                </div>
+                
+                <!-- Right Door -->
+                <div id="door-right" class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 border-l border-accent shadow-[inset_15px_0_30px_rgba(0,0,0,0.6)] origin-right will-change-transform flex items-center justify-start pl-3 md:pl-5 z-20">
+                    <!-- Door details -->
+                    <div class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tr-full rounded-br-sm opacity-50"></div>
+                    <!-- Handle -->
+                    <div class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-70 transition-opacity duration-500">
+                <span class="text-white text-sm tracking-widest uppercase mb-2 font-medium">Scroll to Open</span>
+                <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+                    <div class="w-1 h-2 bg-accent rounded-full animate-bounce"></div>
+                </div>
+            </div>
+            
         </div>
-    </header>
+    </div>
 
     <!-- Highlights Section -->
     <section id="highlights" class="py-24 bg-white relative">
@@ -379,6 +414,84 @@
             offset: 100,
             duration: 800,
             easing: 'ease-out-cubic'
+        });
+
+        // Door Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('door-scroll-container');
+            const doorLeft = document.getElementById('door-left');
+            const doorRight = document.getElementById('door-right');
+            const doorArch = document.getElementById('door-arch');
+            const heroContent = document.getElementById('hero-content');
+            const scrollIndicator = document.getElementById('scroll-indicator');
+            
+            const heroTag = document.getElementById('hero-tag');
+            const heroTitle = document.getElementById('hero-title');
+            const heroDesc = document.getElementById('hero-desc');
+            const heroActions = document.getElementById('hero-actions');
+
+            if (!container) return;
+
+            window.addEventListener('scroll', () => {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                // Calculate progress from 0 to 1
+                let progress = -rect.top / (rect.height - windowHeight);
+                progress = Math.max(0, Math.min(1, progress));
+
+                // Hide scroll indicator once scrolled
+                if (progress > 0.05) {
+                    scrollIndicator.style.opacity = '0';
+                } else {
+                    scrollIndicator.style.opacity = '0.7';
+                }
+
+                // Phase 1: 0 to 0.4 -> Doors slide open
+                let doorOpenProgress = Math.min(1, progress / 0.4);
+                // Easing for smoother door opening (ease-in-out)
+                let easedDoor = doorOpenProgress < 0.5 ? 2 * doorOpenProgress * doorOpenProgress : -1 + (4 - 2 * doorOpenProgress) * doorOpenProgress;
+                
+                doorLeft.style.transform = `translateX(-${easedDoor * 100}%)`;
+                doorRight.style.transform = `translateX(${easedDoor * 100}%)`;
+
+                // Phase 2: 0.4 to 0.9 -> Arch scales up
+                let scaleProgress = Math.max(0, (progress - 0.4) / 0.5);
+                // Exponential easing for scale (looks better when zooming)
+                let easedScale = Math.pow(scaleProgress, 3);
+                // Base scale is 1, max scale is around 40 (enough to fill screen)
+                let currentScale = 1 + easedScale * 40;
+                
+                doorArch.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
+                
+                // Fade out the arch as it gets huge to avoid pixelated edges or artifacts
+                if (currentScale > 15) {
+                    doorArch.style.opacity = Math.max(0, 1 - (currentScale - 15) / 5).toString();
+                } else {
+                    doorArch.style.opacity = '1';
+                }
+
+                // Hero Content comes into focus
+                if (progress > 0.3) {
+                    heroContent.style.transform = `scale(1)`;
+                    
+                    // Trigger hero text animations
+                    heroTag.classList.remove('opacity-0', 'translate-y-8');
+                    heroTitle.classList.remove('opacity-0', 'translate-y-8');
+                    heroDesc.classList.remove('opacity-0', 'translate-y-8');
+                    heroActions.classList.remove('opacity-0', 'translate-y-8');
+                } else {
+                    heroContent.style.transform = `scale(1.1)`;
+                    
+                    heroTag.classList.add('opacity-0', 'translate-y-8');
+                    heroTitle.classList.add('opacity-0', 'translate-y-8');
+                    heroDesc.classList.add('opacity-0', 'translate-y-8');
+                    heroActions.classList.add('opacity-0', 'translate-y-8');
+                }
+            });
+            
+            // Trigger scroll event once on load to set initial state
+            window.dispatchEvent(new Event('scroll'));
         });
     </script>
 </body>

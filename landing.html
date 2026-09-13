@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reyansh Group | Your Trust. Our Promise.</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script>
         tailwind.config = {
             theme: {
@@ -37,6 +42,15 @@
     </script>
 
     <style>
+        .swiper-button-disabled {
+            display: none !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #6B7280 !important;
+        }
+
         .glass-nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -45,6 +59,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans text-gray-800 bg-slate-50 antialiased overflow-x-hidden">
 
     <!-- Navigation -->
@@ -55,15 +70,18 @@
                     <!-- TODO: Replace SVG with actual Logo img -->
                     <!-- <img src="path/to/logo.png" alt="Reyansh Group" class="h-10"> -->
                     <svg class="w-10 h-10 text-brand" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                        <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z" />
                     </svg>
                     <span class="font-serif font-bold text-2xl tracking-wider text-brand">REYANSH</span>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#story" class="text-gray-600 hover:text-brand font-medium transition-colors">Our Story</a>
-                    <a href="#vedanta" class="text-brand font-bold transition-colors">Reyansh Vedanta <span class="ml-1 inline-block px-2 py-0.5 bg-accent/20 text-accent text-xs rounded-full">NEW</span></a>
-                    <a href="#portfolio" class="text-gray-600 hover:text-brand font-medium transition-colors">Portfolio</a>
-                    <a href="#contact" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
+                    <a href="#vedanta" class="text-brand font-bold transition-colors">Reyansh Vedanta <span
+                            class="ml-1 inline-block px-2 py-0.5 bg-accent/20 text-accent text-xs rounded-full">NEW</span></a>
+                    <a href="#portfolio"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Portfolio</a>
+                    <a href="#contact"
+                        class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
                         Request a Call Back
                     </a>
                 </div>
@@ -71,113 +89,206 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative pt-24 pb-12 md:pt-32 md:pb-24 lg:pb-32 flex items-center min-h-[90vh]">
-        <div class="absolute inset-0 z-0">
-            <!-- TODO: User background image replacement -->
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Luxury Real Estate" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-dark/40"></div>
-        </div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div class="lg:w-3/5 text-white" data-aos="fade-up" data-aos-duration="1000">
-                <span class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-4">REYANSH GROUP</span>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6">
-                    Your trust.<br><span class="text-accent">Our promise.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
-                    More Than Buildings. A Future Built With Purpose. Every address holds a story - of families, aspirations, memories and the promise of what lies ahead.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#vedanta" class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Discover Vedanta</a>
-                    <a href="#story" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Our Legacy</a>
+    <!-- Interactive Scroll Hero Section -->
+    <div id="landing-hero-container" class="relative h-[250vh] bg-dark">
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center bg-dark">
+
+            <!-- Background Video -->
+            <div class="absolute inset-0 z-0">
+                <video id="hero-bg-video" autoplay loop muted playsinline
+                    class="w-full h-full object-cover transition-transform duration-100 ease-out will-change-transform scale-110">
+                    <source src="./assets/web-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="hero-overlay" class="absolute inset-0 bg-dark opacity-40 transition-opacity duration-100">
                 </div>
             </div>
 
-            <div class="lg:w-2/5 w-full max-w-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-brand">
-                    <h3 class="text-2xl font-bold text-dark mb-2">Register Interest</h3>
-                    <p class="text-gray-500 mb-6 text-sm">Connect with our experts today.</p>
-                    
-                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="Enter your name">
+            <!-- Content Container -->
+            <div
+                class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col md:flex-row md:items-center h-full overflow-y-auto md:overflow-visible">
+
+                <!-- Initial Centered Big Text (Fades out / Moves up on scroll) -->
+                <div id="hero-center-text"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-4xl transition-all duration-100 will-change-transform">
+                    <span
+                        class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-6 shadow-sm">REYANSH
+                        GROUP</span>
+                    <h1
+                        class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight drop-shadow-2xl">
+                        Your trust.<br><span class="text-accent">Our promise.</span>
+                    </h1>
+                </div>
+
+                <!-- Split Content (Reveals on scroll) -->
+                <div id="hero-split-content"
+                    class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 opacity-0 pointer-events-none transition-all duration-100 will-change-transform translate-y-20 pt-28 pb-10 md:pt-20 md:pb-0 my-auto">
+
+                    <div class="lg:w-3/5 text-white mt-8 md:mt-0 text-center md:text-left">
+                        <span
+                            class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-xs md:text-sm font-semibold tracking-wider mb-3 md:mb-4">A
+                            FUTURE BUILT WITH PURPOSE</span>
+                        <h2 class="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-3 md:mb-6">
+                            More Than Buildings.
+                        </h2>
+                        <p
+                            class="text-base md:text-xl text-gray-200 mb-6 md:mb-8 max-w-2xl leading-relaxed drop-shadow-md mx-auto md:mx-0 hidden sm:block">
+                            Every address holds a story - of families, aspirations, memories and the promise of what
+                            lies ahead. Experience the pinnacle of modern luxury living.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4">
+                            <a href="#vedanta"
+                                class="bg-brand hover:bg-brand-dark text-white px-5 md:px-8 py-3 md:py-4 rounded-md font-bold text-sm md:text-lg transition-colors shadow-lg">Discover
+                                Vedanta</a>
+                            <a href="#story"
+                                class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-5 md:px-8 py-3 md:py-4 rounded-md font-bold text-sm md:text-lg transition-colors">Our
+                                Legacy</a>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="+91">
+                    </div>
+
+                    <div class="lg:w-2/5 w-full max-w-md">
+                        <div
+                            class="bg-white/95 backdrop-blur-md p-6 md:p-8 rounded-xl shadow-2xl border-t-4 border-brand">
+                            <h3 class="text-xl md:text-2xl font-bold text-dark mb-1 md:mb-2">Register Interest</h3>
+                            <p class="text-gray-500 mb-4 md:mb-6 text-sm">Connect with our experts today.</p>
+
+                            <form class="space-y-3 md:space-y-4"
+                                onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
+                                <div>
+                                    <input type="text" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm md:text-base"
+                                        placeholder="Full Name">
+                                </div>
+                                <div>
+                                    <input type="tel" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm md:text-base"
+                                        placeholder="Phone Number (+91)">
+                                </div>
+                                <div>
+                                    <input type="email" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all text-sm md:text-base"
+                                        placeholder="Email Address">
+                                </div>
+                                <div>
+                                    <select required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all bg-white text-sm md:text-base">
+                                        <option value="">Area of Interest</option>
+                                        <option value="vedanta">Reyansh Vedanta</option>
+                                        <option value="buying">Buying a New Home</option>
+                                        <option value="redevelopment">Society Redevelopment</option>
+                                    </select>
+                                </div>
+                                <button type="submit"
+                                    class="w-full bg-dark hover:bg-dark-light text-white font-bold py-3 px-4 rounded-md transition-colors mt-2 text-sm md:text-base">
+                                    Submit Inquiry
+                                </button>
+                            </form>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                            <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all" placeholder="email@example.com">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Area of Interest</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand focus:border-brand outline-none transition-all bg-white">
-                                <option value="">Select an option</option>
-                                <option value="vedanta">Reyansh Vedanta</option>
-                                <option value="buying">Buying a New Home</option>
-                                <option value="redevelopment">Society Redevelopment</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-dark hover:bg-dark-light text-white font-bold py-3 px-4 rounded-md transition-colors mt-2">
-                            Submit Inquiry
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
+
+            <!-- Scroll Indicator -->
+            <div id="landing-scroll-indicator"
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-80 transition-opacity duration-500">
+                <span class="text-white text-sm tracking-widest uppercase mb-2 font-medium drop-shadow-md">Scroll to
+                    Explore</span>
+                <div
+                    class="w-6 h-10 border-2 border-white/70 rounded-full flex justify-center p-1 shadow-lg bg-black/20">
+                    <div class="w-1 h-2 bg-accent rounded-full animate-bounce"></div>
+                </div>
+            </div>
+
         </div>
-    </header>
+    </div>
 
     <!-- Stats / At a glance -->
-    <section class="py-12 bg-brand text-white relative z-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-brand-light">
-                <div data-aos="fade-up" data-aos-delay="0">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="25">0</span>+</div>
-                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Years of Perfection</div>
+    <section class="py-20 bg-brand text-white relative z-20 overflow-hidden" id="stats-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+            <!-- Animated Curved Line Background -->
+            <div class="absolute inset-0 top-1/2 -translate-y-1/2 w-full h-[150px] hidden md:block pointer-events-none z-0"
+                style="clip-path: inset(0 100% 0 0); transition: clip-path 3s ease-out;" id="stats-curve">
+                <svg width="100%" height="100%" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 0 50 Q 125 150 250 50 T 500 50 T 750 50 T 1000 50" stroke="url(#paint0_linear)"
+                        stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="10 10" />
+                    <defs>
+                        <linearGradient id="paint0_linear" x1="0" y1="50" x2="1000" y2="50"
+                            gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D4AF37" stop-opacity="0" />
+                            <stop offset="0.1" stop-color="#D4AF37" />
+                            <stop offset="0.9" stop-color="#D4AF37" />
+                            <stop offset="1" stop-color="#D4AF37" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
+                <div class="stat-item" style="opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out;">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-serif drop-shadow-md text-white">
+                        <span class="counter" data-target="25">0</span>+
+                    </div>
+                    <div class="text-accent font-bold uppercase tracking-widest text-xs md:text-sm">Years of Perfection
+                    </div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="40">0</span>+</div>
-                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Icons Delivered</div>
+                <div class="stat-item" style="opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out;">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-serif drop-shadow-md text-white">
+                        <span class="counter" data-target="40">0</span>+
+                    </div>
+                    <div class="text-accent font-bold uppercase tracking-widest text-xs md:text-sm">Icons Delivered
+                    </div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="4000">0</span>+</div>
-                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Happy Families</div>
+                <div class="stat-item" style="opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out;">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-serif drop-shadow-md text-white">
+                        <span class="counter" data-target="4000">0</span>+
+                    </div>
+                    <div class="text-accent font-bold uppercase tracking-widest text-xs md:text-sm">Happy Families</div>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl md:text-5xl font-bold mb-2 font-serif"><span class="counter" data-target="5">0</span>+ <span class="text-2xl">MLN</span></div>
-                    <div class="text-brand-light font-medium uppercase tracking-wide text-sm">Sq. Ft. Delivered</div>
+                <div class="stat-item" style="opacity: 0; transform: translateY(40px); transition: all 0.6s ease-out;">
+                    <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-serif drop-shadow-md text-white">
+                        <span class="counter" data-target="5">0</span>+ <span class="text-2xl md:text-3xl">MLN</span>
+                    </div>
+                    <div class="text-accent font-bold uppercase tracking-widest text-xs md:text-sm">Sq. Ft. Delivered
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Story Section -->
-    <section id="story" class="py-24 bg-white">
+    <section id="story" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right">
+                <div class="story-reveal-text"
+                    style="opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;">
                     <h2 class="text-3xl md:text-5xl font-serif font-bold text-dark mb-6 leading-tight">
                         A Legacy of Experience.<br>
                         <span class="text-brand">A Vision for Tomorrow.</span>
                     </h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Reyansh Group brings together the strength of decades of on-ground real estate experience with a contemporary vision for the future of urban living.
+                        Reyansh Group brings together the strength of decades of on-ground real estate experience with a
+                        contemporary vision for the future of urban living.
                     </p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Our roots trace back to 1999, when the foundation was laid with a commitment to deliver dependable homes. Over the years, this has evolved into a strong track record of completed projects and a deeper understanding of how families live, grow and aspire.
+                        Our roots trace back to 1999, when the foundation was laid with a commitment to deliver
+                        dependable homes. Over the years, this has evolved into a strong track record of completed
+                        projects and a deeper understanding of how families live, grow and aspire.
                     </p>
                     <div class="border-l-4 border-accent pl-6 py-2">
                         <p class="text-xl font-serif italic text-dark">
-                            "When we build with integrity, we create more than homes. We create trust that lasts for generations."
+                            "When we build with integrity, we create more than homes. We create trust that lasts for
+                            generations."
                         </p>
                     </div>
                 </div>
-                <div class="relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Our Story" class="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover">
-                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand/20 rounded-2xl z-0"></div>
+                <div class="relative story-reveal-img"
+                    style="opacity: 0; transform: translateY(50px) scale(0.85); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);">
+                    <video src="./assets/3d-to-reality.mp4" autoplay loop muted playsinline
+                        class="rounded-2xl shadow-2xl relative z-10 w-full h-[500px] object-cover"></video>
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-brand/20 rounded-2xl z-0">
+                    </div>
                 </div>
             </div>
         </div>
@@ -186,40 +297,111 @@
     <!-- Spotlight: Reyansh Vedanta -->
     <section id="vedanta" class="py-24 bg-dark relative overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
+                class="w-full h-full object-cover">
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/90 to-transparent"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-accent font-bold tracking-widest uppercase text-sm mb-4 block" data-aos="fade-up">Introducing Our Masterpiece</span>
-            <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6" data-aos="fade-up" data-aos-delay="100">
-                Reyansh Vedanta
-            </h2>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="200">
-                Rising majestically in Borivali East, a new landmark of thoughtful living designed for those who seek the extraordinary.
-            </p>
-            
-            <div class="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl mb-12 group" data-aos="zoom-in" data-aos-delay="300">
-                <!-- TODO: Replace with Reyansh Vedanta actual rendering -->
-                <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&w=1200&q=80" alt="Reyansh Vedanta Borivali East" class="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent flex items-end">
-                    <div class="p-8 md:p-12 text-left w-full">
-                        <div class="flex justify-between items-end">
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/50"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Side: Content -->
+                <div data-aos="fade-right">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-gradient-to-r from-accent to-accent-light text-dark px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(212,175,55,0.6)] animate-pulse">Now Selling</span>
+                        <span class="text-accent font-bold tracking-widest uppercase text-sm">Daulat Nagar, Borivali East</span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+                        <span class="block text-2xl md:text-3xl text-gray-300 font-light mb-2 tracking-wide">Introducing</span>
+                        Reyansh Vedanta
+                    </h2>
+                    <p class="text-2xl md:text-3xl text-accent font-light italic mb-6">Where Luxury Meets Serenity</p>
+                    <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+                        A meticulously planned residential tower designed for modern lifestyles. This is where shared
+                        routines feel warmer, city access feels easier, and the future feels more rewarding.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-8 mb-12">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent mt-1 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
+                            </div>
                             <div>
-                                <h3 class="text-3xl md:text-4xl font-bold text-white mb-2">Vedanta</h3>
-                                <p class="text-accent text-lg font-medium">Borivali East, Mumbai</p>
+                                <h4 class="text-white font-bold text-lg mb-1">Luxury Living</h4>
+                                <p class="text-gray-400 text-sm">1 & 2 BHK Elegant Lifestyle Homes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent mt-1 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">15+ Amenities</h4>
+                                <p class="text-gray-400 text-sm">Zen Garden, Yoga Deck, Reflexology</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent mt-1 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">Unmatched Connectivity</h4>
+                                <p class="text-gray-400 text-sm">5 mins to Borivali Station, 750m to Metro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent mt-1 flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">A Quieter Address</h4>
+                                <p class="text-gray-400 text-sm">Live close to the city, closer to peace.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div data-aos="fade-up" data-aos-delay="400">
-                <!-- Link to the separate webpage to be created -->
-                <a href="vedanta.html" class="inline-block bg-accent hover:bg-accent-light text-dark px-10 py-4 rounded-md font-bold text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-1">
-                    Explore Reyansh Vedanta
-                </a>
-                <p class="mt-4 text-gray-400 text-sm">Detailed dedicated webpage coming soon.</p>
+                    <div class="flex flex-wrap items-center gap-6">
+                        <a href="vedanta.html"
+                            class="inline-block bg-accent hover:bg-accent-light text-dark px-10 py-4 rounded-md font-bold text-lg transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-1">
+                            Explore Reyansh Vedanta
+                        </a>
+                        <span class="text-gray-400 text-sm flex items-center gap-2 font-medium">
+                            <span class="relative flex h-3 w-3">
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                            </span>
+                            Accepting Inquiries
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Image -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl group" data-aos="fade-left">
+                    <img src="./assets/images-part-2/vedanta.png" alt="Reyansh Vedanta Borivali East"
+                        class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent flex items-end">
+                        <div class="p-8 text-left w-full border-b-4 border-accent">
+                            <h3 class="text-3xl font-bold text-white mb-1">Vedanta</h3>
+                            <p class="text-accent text-lg font-medium">Borivali East, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -231,32 +413,42 @@
                 <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">Our Pillars of Strength</h2>
                 <p class="text-gray-600 text-lg">Every Reyansh development is shaped by five defining pillars.</p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
                 <!-- Pillar 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300"
+                    data-aos="fade-up" data-aos-delay="0">
                     <h3 class="text-xl font-bold text-dark mb-3">Legacy</h3>
-                    <p class="text-gray-600 text-sm">Experience that has been earned over time and proven through delivery.</p>
+                    <p class="text-gray-600 text-sm">Experience that has been earned over time and proven through
+                        delivery.</p>
                 </div>
                 <!-- Pillar 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300"
+                    data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-xl font-bold text-dark mb-3">Trust</h3>
-                    <p class="text-gray-600 text-sm">From blueprint to handover, a seamless, high-quality delivery model.</p>
+                    <p class="text-gray-600 text-sm">From blueprint to handover, a seamless, high-quality delivery
+                        model.</p>
                 </div>
                 <!-- Pillar 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300"
+                    data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-xl font-bold text-dark mb-3">Thoughtful Living</h3>
-                    <p class="text-gray-600 text-sm">Spaces designed around people, families and evolving lifestyles.</p>
+                    <p class="text-gray-600 text-sm">Spaces designed around people, families and evolving lifestyles.
+                    </p>
                 </div>
                 <!-- Pillar 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-accent hover:-translate-y-2 transition-transform duration-300"
+                    data-aos="fade-up" data-aos-delay="300">
                     <h3 class="text-xl font-bold text-dark mb-3">Quality</h3>
-                    <p class="text-gray-600 text-sm">Attention to planning, materials, engineering and long-term performance.</p>
+                    <p class="text-gray-600 text-sm">Attention to planning, materials, engineering and long-term
+                        performance.</p>
                 </div>
                 <!-- Pillar 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white p-6 rounded-xl shadow-sm border-t-4 border-brand hover:-translate-y-2 transition-transform duration-300"
+                    data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-xl font-bold text-dark mb-3">Progress</h3>
-                    <p class="text-gray-600 text-sm">A future-facing approach to redevelopment, growth and better urban living.</p>
+                    <p class="text-gray-600 text-sm">A future-facing approach to redevelopment, growth and better urban
+                        living.</p>
                 </div>
             </div>
         </div>
@@ -266,52 +458,69 @@
     <section id="portfolio" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Landmarks in the Making</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">A Portfolio Shaped for the Future</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Our ongoing developments represent the next phase of the Reyansh journey - projects designed with a sharper understanding of modern aspirations.</p>
+                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Landmarks in the
+                    Making</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">A Portfolio Shaped for the Future
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Our ongoing developments represent the next phase of
+                    the Reyansh journey - projects designed with a sharper understanding of modern aspirations.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="0">
-                    <!-- TODO: Replace image -->
-                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=800&q=80" alt="Reyansh Infinity" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8">
-                        <h3 class="text-2xl font-bold text-white mb-1">Reyansh Infinity</h3>
-                        <p class="text-accent font-medium">Malad West</p>
-                    </div>
-                </div>
+            <div class="relative px-12 md:px-16 py-4" data-aos="fade-up">
+                <div class="swiper portfolio-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-square mb-6">
+                                <img src="./assets/images-part-2/reyansh-infinity.png" alt="Reyansh Infinity Malad West"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-dark mb-1">Reyansh Infinity</h3>
+                                <p class="text-accent font-medium">Malad West</p>
+                            </div>
+                        </div>
 
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="100">
-                    <!-- TODO: Replace image -->
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Veer One" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8">
-                        <h3 class="text-2xl font-bold text-white mb-1">Veer One</h3>
-                        <p class="text-accent font-medium">Vasai East</p>
-                    </div>
-                </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-square mb-6">
+                                <img src="./assets/images-part-2/veer-one.png" alt="Veer One Vasai East"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-dark mb-1">Veer One</h3>
+                                <p class="text-accent font-medium">Vasai East</p>
+                            </div>
+                        </div>
 
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="200">
-                    <!-- TODO: Replace image -->
-                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80" alt="Shiv Krupa Complex" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8">
-                        <h3 class="text-2xl font-bold text-white mb-1">Shiv Krupa Complex</h3>
-                        <p class="text-accent font-medium">Vasai Taluka</p>
-                    </div>
-                </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-square mb-6">
+                                <img src="./assets/images-part-2/shiv-krupa.png" alt="Shiv Krupa Complex Vasai Taluka"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-dark mb-1">Shiv Krupa Complex</h3>
+                                <p class="text-accent font-medium">Vasai Taluka</p>
+                            </div>
+                        </div>
 
-                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-96" data-aos="fade-up" data-aos-delay="300">
-                    <!-- TODO: Replace image -->
-                    <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&w=800&q=80" alt="Ankur Grandeur" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8">
-                        <h3 class="text-2xl font-bold text-white mb-1">Ankur Grandeur</h3>
-                        <p class="text-accent font-medium">Virar East</p>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="group relative rounded-2xl overflow-hidden shadow-lg aspect-square mb-6">
+                                <img src="./assets/images-part-2/ankur-grandeur.png" alt="Ankur Grandeur Virar East"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-2xl font-bold text-dark mb-1">Ankur Grandeur</h3>
+                                <p class="text-accent font-medium">Virar East</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev !left-0 md:!left-2"></div>
+                <div class="swiper-button-next !right-0 md:!right-2"></div>
             </div>
         </div>
     </section>
@@ -320,23 +529,32 @@
     <footer id="contact" class="bg-brand text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-brand-light pb-12">
-                
+
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
                         <!-- TODO: Replace with white logo version -->
                         <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z" />
                         </svg>
                         <span class="font-serif font-bold text-2xl tracking-wider text-white">REYANSH</span>
                     </div>
-                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.</p>
+                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At
+                        Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.
+                    </p>
                 </div>
 
                 <div>
                     <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h4>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
                             <p class="text-sm">
                                 A/101, Shivkari CHSL, <br>
                                 Kasturba Road No. 1, <br>
@@ -344,12 +562,24 @@
                             </p>
                         </div>
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <a href="mailto:info@reyanshgroup.co.in" class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <a href="mailto:info@reyanshgroup.co.in"
+                                class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
                         </div>
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                            <a href="https://www.reyanshgroup.co.in" target="_blank" class="text-sm hover:text-white transition-colors">www.reyanshgroup.co.in</a>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                                </path>
+                            </svg>
+                            <a href="https://www.reyanshgroup.co.in" target="_blank"
+                                class="text-sm hover:text-white transition-colors">www.reyanshgroup.co.in</a>
                         </div>
                     </div>
                 </div>
@@ -373,7 +603,28 @@
 
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+        // Initialize Swiper
+        document.addEventListener('DOMContentLoaded', function () {
+            const portfolioSwiper = new Swiper('.portfolio-swiper', {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                        spaceBetween: 40,
+                    }
+                }
+            });
+        });
         document.getElementById('year').textContent = new Date().getFullYear();
         AOS.init({
             once: true,
@@ -382,47 +633,163 @@
             easing: 'ease-out-cubic'
         });
 
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        // Lower number of steps makes the animation much quicker
-        const steps = 40; 
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Story Reveal Animation
+        const storyObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    counters.forEach(counter => {
-                        const target = +counter.getAttribute('data-target');
-                        // Calculate increment based on fixed steps so they all finish around the same time
-                        const inc = target / steps;
-                        
-                        const updateCount = () => {
-                            const count = +counter.innerText;
+                const text = entry.target.querySelector('.story-reveal-text');
+                const img = entry.target.querySelector('.story-reveal-img');
 
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count + inc);
-                                setTimeout(updateCount, 15);
-                            } else {
-                                // Add comma formatting for numbers >= 1000
-                                counter.innerText = target >= 1000 ? target.toLocaleString() : target;
-                            }
-                        };
-                        updateCount();
-                    });
-                    observer.unobserve(entry.target);
+                if (entry.isIntersecting) {
+                    if (text) {
+                        text.style.opacity = '1';
+                        text.style.transform = 'translateY(0)';
+                    }
+                    if (img) {
+                        img.style.opacity = '1';
+                        img.style.transform = 'translateY(0) scale(1)';
+                    }
+                } else {
+                    // Reset animation state
+                    if (text) {
+                        text.style.opacity = '0';
+                        text.style.transform = 'translateY(50px)';
+                    }
+                    if (img) {
+                        img.style.opacity = '0';
+                        img.style.transform = 'translateY(50px) scale(0.85)';
+                    }
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.3 });
 
-        const statsSection = document.querySelector('.bg-brand.text-white');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
+        const storySection = document.getElementById('story');
+        if (storySection) storyObserver.observe(storySection);
+
+        // Stats & Curved Line Reveal
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const curve = document.getElementById('stats-curve');
+                const items = document.querySelectorAll('.stat-item');
+
+                if (entry.isIntersecting) {
+                    // Reveal the background curve
+                    if (curve) curve.style.clipPath = 'inset(0 0 0 0)';
+
+                    // Reveal Stat Items sequentially
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            // Only animate if it's still intersecting after the delay
+                            if (!entry.isIntersecting) return;
+
+                            // Fade and slide up the stat item
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+
+                            // Trigger the number counter
+                            const counter = item.querySelector('.counter');
+                            if (counter && !counter.dataset.animating) {
+                                counter.dataset.animating = 'true';
+                                const target = +counter.getAttribute('data-target');
+                                const inc = target / 40;
+                                const updateCount = () => {
+                                    if (item.style.opacity === '0') {
+                                        counter.dataset.animating = 'false';
+                                        return;
+                                    }
+                                    const count = +counter.innerText.replace(/,/g, '');
+                                    if (count < target) {
+                                        counter.innerText = Math.ceil(count + inc);
+                                        setTimeout(updateCount, 25);
+                                    } else {
+                                        counter.innerText = target >= 1000 ? target.toLocaleString() : target;
+                                        counter.dataset.animating = 'false';
+                                    }
+                                };
+                                updateCount();
+                            }
+                        }, index * 250); // Stagger by 250ms
+                    });
+                } else {
+                    // Reset animation state
+                    if (curve) curve.style.clipPath = 'inset(0 100% 0 0)';
+
+                    items.forEach((item) => {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(40px)';
+
+                        const counter = item.querySelector('.counter');
+                        if (counter) {
+                            counter.innerText = '0';
+                            counter.dataset.animating = '';
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.4 });
+
+        const statsSectionEl = document.getElementById('stats-section');
+        if (statsSectionEl) statsObserver.observe(statsSectionEl);
+
+        // Landing Page Hero Scroll Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('landing-hero-container');
+            const bgMedia = document.getElementById('hero-bg-video') || document.getElementById('hero-bg-img');
+            const overlay = document.getElementById('hero-overlay');
+            const centerText = document.getElementById('hero-center-text');
+            const splitContent = document.getElementById('hero-split-content');
+            const scrollIndicator = document.getElementById('landing-scroll-indicator');
+
+            if (!container) return;
+
+            window.addEventListener('scroll', () => {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Calculate progress from 0 to 1
+                let progress = -rect.top / (rect.height - windowHeight);
+                progress = Math.max(0, Math.min(1, progress));
+
+                // 1. Image/Video zooms out slightly and overlay darkens
+                let scale = 1.1 - (progress * 0.1);
+                if (bgMedia) bgMedia.style.transform = `scale(${scale})`;
+
+                // Darken overlay from 0.3 to 0.7 for better form readability
+                let opacity = 0.3 + (progress * 0.5);
+                if (overlay) overlay.style.opacity = opacity;
+
+                // Hide scroll indicator quickly
+                if (progress > 0.05) {
+                    if (scrollIndicator) scrollIndicator.style.opacity = '0';
+                } else {
+                    if (scrollIndicator) scrollIndicator.style.opacity = '0.8';
+                }
+
+                // 2. Center text fades out and moves up
+                // Fades out completely by progress 0.4
+                let centerTextProgress = Math.min(1, progress / 0.4);
+                if (centerText) {
+                    centerText.style.opacity = 1 - centerTextProgress;
+                    centerText.style.transform = `translate(-50%, calc(-50% - ${centerTextProgress * 100}px))`;
+                    centerText.style.pointerEvents = centerTextProgress > 0.3 ? 'none' : 'auto';
+                }
+
+                // 3. Split content fades in and moves up
+                // Starts fading in after 0.3
+                let splitProgress = Math.max(0, (progress - 0.3) / 0.6);
+                // ease out
+                let easedSplit = 1 - Math.pow(1 - splitProgress, 3);
+
+                if (splitContent) {
+                    splitContent.style.opacity = easedSplit;
+                    splitContent.style.transform = `translateY(${20 - (easedSplit * 20)}px)`;
+                    splitContent.style.pointerEvents = splitProgress > 0.1 ? 'auto' : 'none';
+                }
+            });
+
+            // Trigger scroll event once on load to set initial state
+            window.dispatchEvent(new Event('scroll'));
+        });
     </script>
 </body>
+
 </html>
