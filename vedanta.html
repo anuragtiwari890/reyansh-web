@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reyansh Vedanta | Come Home to Calm</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -43,6 +46,7 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
+
         .text-gradient {
             background: linear-gradient(to right, #D4AF37, #E6C96A);
             -webkit-background-clip: text;
@@ -50,6 +54,7 @@
         }
     </style>
 </head>
+
 <body class="font-sans text-gray-800 bg-slate-50 antialiased overflow-x-hidden">
 
     <!-- Navigation -->
@@ -58,24 +63,35 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <a href="landing.html" class="flex items-center gap-3 group">
-                        <svg class="w-10 h-10 text-brand group-hover:text-brand-dark transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                        <svg class="w-10 h-10 text-brand group-hover:text-brand-dark transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z" />
                         </svg>
                         <div>
-                            <span class="font-serif font-bold text-xl tracking-wider text-brand block leading-tight">REYANSH</span>
-                            <span class="font-sans text-sm font-bold tracking-widest text-dark block leading-tight">VEDANTA</span>
+                            <span
+                                class="font-serif font-bold text-xl tracking-wider text-brand block leading-tight">REYANSH</span>
+                            <span
+                                class="font-sans text-sm font-bold tracking-widest text-dark block leading-tight">VEDANTA</span>
                         </div>
                     </a>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="landing.html" class="text-gray-500 hover:text-brand font-medium transition-colors flex items-center gap-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    <a href="landing.html"
+                        class="text-gray-500 hover:text-brand font-medium transition-colors flex items-center gap-1">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
                         Back to Main
                     </a>
-                    <a href="#highlights" class="text-gray-600 hover:text-brand font-medium transition-colors">Highlights</a>
-                    <a href="#amenities" class="text-gray-600 hover:text-brand font-medium transition-colors">Amenities</a>
-                    <a href="#connectivity" class="text-gray-600 hover:text-brand font-medium transition-colors">Connectivity</a>
-                    <a href="#contact" class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
+                    <a href="#highlights"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Highlights</a>
+                    <a href="#amenities"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Amenities</a>
+                    <a href="#connectivity"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Connectivity</a>
+                    <a href="#contact"
+                        class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
                         Inquire Now
                     </a>
                 </div>
@@ -86,60 +102,61 @@
     <!-- Interactive Door Scroll Hero Section -->
     <div id="door-scroll-container" class="relative h-[300vh] bg-dark">
         <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-dark">
-            
+
             <!-- The New Place (Hero Content) -->
             <div class="absolute inset-0 z-0 scale-110 transition-transform duration-1000 ease-out" id="hero-content">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=80" alt="Come home to calm" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-r from-dark/95 via-dark/80 to-transparent"></div>
-                
-                <div class="absolute inset-0 flex items-center z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
-                    <div class="lg:w-1/2 text-white">
-                        <span id="hero-tag" class="inline-block py-1 px-3 rounded-full bg-accent/20 text-accent border border-accent/30 text-sm font-semibold tracking-wider mb-6 opacity-0 translate-y-8 transition-all duration-1000 ease-out">DAULAT NAGAR, BORIVALI EAST</span>
-                        <h1 id="hero-title" class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight mb-6 opacity-0 translate-y-8 transition-all duration-1000 delay-200 ease-out">
-                            Come home <br><span class="text-accent italic font-light">to Calm</span>
-                        </h1>
-                        <p id="hero-desc" class="text-xl md:text-2xl text-gray-200 mb-8 max-w-xl font-light opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out">
-                            A life where calm belongs to your everyday.
-                        </p>
-                        <div id="hero-actions" class="flex flex-wrap gap-4 opacity-0 translate-y-8 transition-all duration-1000 delay-500 ease-out">
-                            <a href="#highlights" class="bg-accent hover:bg-accent-light text-dark px-8 py-4 rounded-md font-bold text-lg transition-colors shadow-lg">Explore Project</a>
-                            <a href="#contact" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors">Download Brochure</a>
-                        </div>
+                <video id="hero-video" class="w-full h-full object-cover" muted loop playsinline preload="auto">
+                    <source src="assets/vendata-web-video-compressed.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+            <!-- The Arch and Doors -->
+            <div id="door-arch"
+                class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform"
+                style="box-shadow: 0 0 0 150vmax #0F172A;">
+
+                <!-- Door Frame Inner Shadow for Depth -->
+                <div
+                    class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-30 pointer-events-none rounded-t-full">
+                </div>
+
+                <!-- Left Door -->
+                <div id="door-left"
+                    class="absolute top-0 left-0 w-1/2 h-full bg-slate-800 border-r border-accent shadow-[inset_-15px_0_30px_rgba(0,0,0,0.6)] origin-left will-change-transform flex items-center justify-end pr-3 md:pr-5 z-20">
+                    <!-- Door details -->
+                    <div
+                        class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tl-full rounded-bl-sm opacity-50">
+                    </div>
+                    <!-- Handle -->
+                    <div
+                        class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                    </div>
+                </div>
+
+                <!-- Right Door -->
+                <div id="door-right"
+                    class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 border-l border-accent shadow-[inset_15px_0_30px_rgba(0,0,0,0.6)] origin-right will-change-transform flex items-center justify-start pl-3 md:pl-5 z-20">
+                    <!-- Door details -->
+                    <div
+                        class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tr-full rounded-br-sm opacity-50">
+                    </div>
+                    <!-- Handle -->
+                    <div
+                        class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]">
                     </div>
                 </div>
             </div>
 
-            <!-- The Arch and Doors -->
-            <div id="door-arch" class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform" style="box-shadow: 0 0 0 150vmax #0F172A;">
-                
-                <!-- Door Frame Inner Shadow for Depth -->
-                <div class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-30 pointer-events-none rounded-t-full"></div>
-
-                <!-- Left Door -->
-                <div id="door-left" class="absolute top-0 left-0 w-1/2 h-full bg-slate-800 border-r border-accent shadow-[inset_-15px_0_30px_rgba(0,0,0,0.6)] origin-left will-change-transform flex items-center justify-end pr-3 md:pr-5 z-20">
-                    <!-- Door details -->
-                    <div class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tl-full rounded-bl-sm opacity-50"></div>
-                    <!-- Handle -->
-                    <div class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
-                </div>
-                
-                <!-- Right Door -->
-                <div id="door-right" class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 border-l border-accent shadow-[inset_15px_0_30px_rgba(0,0,0,0.6)] origin-right will-change-transform flex items-center justify-start pl-3 md:pl-5 z-20">
-                    <!-- Door details -->
-                    <div class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tr-full rounded-br-sm opacity-50"></div>
-                    <!-- Handle -->
-                    <div class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
-                </div>
-            </div>
-            
             <!-- Scroll Indicator -->
-            <div id="scroll-indicator" class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-70 transition-opacity duration-500">
+            <div id="scroll-indicator"
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-70 transition-opacity duration-500">
                 <span class="text-white text-sm tracking-widest uppercase mb-2 font-medium">Scroll to Open</span>
                 <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
                     <div class="w-1 h-2 bg-accent rounded-full animate-bounce"></div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
@@ -149,30 +166,50 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-up">
                     <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand mb-4">The Serene Life</h2>
-                    <p class="text-lg text-gray-600 mb-10">Experience the world of Vedanta. A meticulously planned residential tower designed for modern lifestyles.</p>
-                    
+                    <p class="text-lg text-gray-600 mb-10">Experience the world of Vedanta. A meticulously planned
+                        residential tower designed for modern lifestyles.</p>
+
                     <ul class="space-y-6">
-                        <li class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <li
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                             <div class="bg-accent/20 p-3 rounded-lg text-accent">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    </path>
+                                </svg>
                             </div>
                             <span class="text-lg font-semibold text-dark">1 & 2 BHK Lifestyle Homes</span>
                         </li>
-                        <li class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <li
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                             <div class="bg-accent/20 p-3 rounded-lg text-accent">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
                             </div>
                             <span class="text-lg font-semibold text-dark">Elegant Residential Tower</span>
                         </li>
-                        <li class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <li
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                             <div class="bg-accent/20 p-3 rounded-lg text-accent">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
                             </div>
                             <span class="text-lg font-semibold text-dark">15+ Modern Lifestyle Amenities</span>
                         </li>
-                        <li class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                        <li
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
                             <div class="bg-accent/20 p-3 rounded-lg text-accent">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
                             </div>
                             <span class="text-lg font-semibold text-dark">Secured Car Parking Space</span>
                         </li>
@@ -180,8 +217,11 @@
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
                     <!-- TODO: Replace with the actual tower rendering -->
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" alt="Reyansh Vedanta Tower" class="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]">
-                    <div class="absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+                        alt="Reyansh Vedanta Tower"
+                        class="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]">
+                    <div class="absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0">
+                    </div>
                 </div>
             </div>
         </div>
@@ -193,9 +233,11 @@
             <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">Space for life to feel lighter</h2>
             <p class="text-lg md:text-xl text-brand-light mb-10 leading-relaxed">
                 Some homes give you space. Some homes give you convenience. Some homes give you peace of mind. <br><br>
-                At <span class="font-bold text-white">Reyansh Vedanta</span>, they come together in one address. This is where shared routines feel warmer, city access feels easier, and the future feels more rewarding.
+                At <span class="font-bold text-white">Reyansh Vedanta</span>, they come together in one address. This is
+                where shared routines feel warmer, city access feels easier, and the future feels more rewarding.
             </p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12 font-serif font-bold text-3xl md:text-5xl text-accent/90 tracking-widest uppercase">
+            <div
+                class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12 font-serif font-bold text-3xl md:text-5xl text-accent/90 tracking-widest uppercase">
                 <span data-aos="fade-up" data-aos-delay="100">Live</span>
                 <span data-aos="fade-up" data-aos-delay="200">Connect</span>
                 <span data-aos="fade-up" data-aos-delay="300">Grow</span>
@@ -207,55 +249,77 @@
     <section id="amenities" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Lifestyle Comforts</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">For better routines, healthier living<br>and more shared moments.</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto text-lg mt-4">At Reyansh Vedanta, amenities are designed to support real daily life—the kind that brings families together, encourages wellness, and adds ease to every age and stage.</p>
+                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Lifestyle
+                    Comforts</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">For better routines, healthier
+                    living<br>and more shared moments.</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg mt-4">At Reyansh Vedanta, amenities are designed to
+                    support real daily life—the kind that brings families together, encourages wellness, and adds ease
+                    to every age and stage.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Amenity 1 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="0">
-                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=600&q=80" alt="Party Lawn" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=600&q=80"
+                        alt="Party Lawn"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Party Lawn</h3>
                     </div>
                 </div>
                 <!-- Amenity 2 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1596766467362-e19ecb0051e5?auto=format&fit=crop&w=600&q=80" alt="Zen Garden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1596766467362-e19ecb0051e5?auto=format&fit=crop&w=600&q=80"
+                        alt="Zen Garden"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Zen Garden</h3>
                     </div>
                 </div>
                 <!-- Amenity 3 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Reflexology Area" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+                        alt="Reflexology Area"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Reflexology Area</h3>
                     </div>
                 </div>
                 <!-- Amenity 4 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1552674605-15c2145eba82?auto=format&fit=crop&w=600&q=80" alt="Jogging Track" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1552674605-15c2145eba82?auto=format&fit=crop&w=600&q=80"
+                        alt="Jogging Track"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Jogging Track</h3>
                     </div>
                 </div>
                 <!-- Amenity 5 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Yoga Deck" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
+                        alt="Yoga Deck"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Yoga Deck</h3>
                     </div>
                 </div>
                 <!-- Amenity 6 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1506869640319-fee1a2a3eb45?auto=format&fit=crop&w=600&q=80" alt="Senior Citizen Seating" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1506869640319-fee1a2a3eb45?auto=format&fit=crop&w=600&q=80"
+                        alt="Senior Citizen Seating"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
                         <h3 class="text-lg font-bold text-white tracking-wider uppercase">Senior Citizen Seating</h3>
@@ -268,67 +332,94 @@
     <!-- Connectivity Section -->
     <section id="connectivity" class="py-24 bg-dark text-white relative">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
+                class="w-full h-full object-cover">
         </div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-accent mb-4">Calmly Connected</h2>
                 <p class="text-xl text-gray-300">A quieter address. A more connected life.</p>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Every important place, effortlessly close. Live close to the city, live closer to peace.</p>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Every important place, effortlessly close. Live close to
+                    the city, live closer to peace.</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Connectivity -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="0">
                     <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Connectivity</h3>
                     <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>S. V. Road</span> <span class="text-accent font-semibold">Instant</span></li>
-                        <li class="flex justify-between"><span>Ovaripada Metro Station</span> <span class="text-accent font-semibold">750 m</span></li>
-                        <li class="flex justify-between"><span>Western Express Highway</span> <span class="text-accent font-semibold">800 m</span></li>
-                        <li class="flex justify-between"><span>Dahisar Station (East)</span> <span class="text-accent font-semibold">1.1 km</span></li>
-                        <li class="flex justify-between"><span>Borivali Station (East)</span> <span class="text-accent font-semibold">5 mins walk</span></li>
+                        <li class="flex justify-between"><span>S. V. Road</span> <span
+                                class="text-accent font-semibold">Instant</span></li>
+                        <li class="flex justify-between"><span>Ovaripada Metro Station</span> <span
+                                class="text-accent font-semibold">750 m</span></li>
+                        <li class="flex justify-between"><span>Western Express Highway</span> <span
+                                class="text-accent font-semibold">800 m</span></li>
+                        <li class="flex justify-between"><span>Dahisar Station (East)</span> <span
+                                class="text-accent font-semibold">1.1 km</span></li>
+                        <li class="flex justify-between"><span>Borivali Station (East)</span> <span
+                                class="text-accent font-semibold">5 mins walk</span></li>
                     </ul>
                 </div>
 
                 <!-- Shopping -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Shopping & Entertainment</h3>
+                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Shopping &
+                        Entertainment</h3>
                     <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Oberoi Sky City Mall</span> <span class="text-accent font-semibold">3.4 km</span></li>
-                        <li class="flex justify-between"><span>Thakur Mall</span> <span class="text-accent font-semibold">4.8 km</span></li>
+                        <li class="flex justify-between"><span>Oberoi Sky City Mall</span> <span
+                                class="text-accent font-semibold">3.4 km</span></li>
+                        <li class="flex justify-between"><span>Thakur Mall</span> <span
+                                class="text-accent font-semibold">4.8 km</span></li>
                     </ul>
                 </div>
 
                 <!-- Education -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Educational Institutes</h3>
+                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Educational Institutes
+                    </h3>
                     <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>St. Xavier's High School</span> <span class="text-accent font-semibold">400 m</span></li>
-                        <li class="flex justify-between"><span>Shailendra School</span> <span class="text-accent font-semibold">800 m</span></li>
-                        <li class="flex justify-between"><span>Rustomjee Cambridge</span> <span class="text-accent font-semibold">2.0 km</span></li>
+                        <li class="flex justify-between"><span>St. Xavier's High School</span> <span
+                                class="text-accent font-semibold">400 m</span></li>
+                        <li class="flex justify-between"><span>Shailendra School</span> <span
+                                class="text-accent font-semibold">800 m</span></li>
+                        <li class="flex justify-between"><span>Rustomjee Cambridge</span> <span
+                                class="text-accent font-semibold">2.0 km</span></li>
                     </ul>
                 </div>
 
                 <!-- Hospitals -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Hospitals & Diagnostics</h3>
+                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Hospitals & Diagnostics
+                    </h3>
                     <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Navneet Hospital</span> <span class="text-accent font-semibold">400 m</span></li>
+                        <li class="flex justify-between"><span>Navneet Hospital</span> <span
+                                class="text-accent font-semibold">400 m</span></li>
                         <!-- Fixed brochure typo from km to m -->
-                        <li class="flex justify-between"><span>Northern Care</span> <span class="text-accent font-semibold">700 m</span></li>
-                        <li class="flex justify-between"><span>Sanjivani Hospital</span> <span class="text-accent font-semibold">850 m</span></li>
+                        <li class="flex justify-between"><span>Northern Care</span> <span
+                                class="text-accent font-semibold">700 m</span></li>
+                        <li class="flex justify-between"><span>Sanjivani Hospital</span> <span
+                                class="text-accent font-semibold">850 m</span></li>
                     </ul>
                 </div>
 
                 <!-- Religious -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="400">
                     <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Religious Places</h3>
                     <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Siddhi Hanuman Mandir</span> <span class="text-accent font-semibold">In premises</span></li>
-                        <li class="flex justify-between"><span>Shree Digambar Mandir</span> <span class="text-accent font-semibold">1 min</span></li>
-                        <li class="flex justify-between"><span>Shri Krishna Mandir</span> <span class="text-accent font-semibold">1 min</span></li>
-                        <li class="flex justify-between"><span>Ambe Mata Mandir</span> <span class="text-accent font-semibold">1 min</span></li>
+                        <li class="flex justify-between"><span>Siddhi Hanuman Mandir</span> <span
+                                class="text-accent font-semibold">In premises</span></li>
+                        <li class="flex justify-between"><span>Shree Digambar Mandir</span> <span
+                                class="text-accent font-semibold">1 min</span></li>
+                        <li class="flex justify-between"><span>Shri Krishna Mandir</span> <span
+                                class="text-accent font-semibold">1 min</span></li>
+                        <li class="flex justify-between"><span>Ambe Mata Mandir</span> <span
+                                class="text-accent font-semibold">1 min</span></li>
                     </ul>
                 </div>
             </div>
@@ -338,10 +429,16 @@
     <!-- Floor Plans Section -->
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-10" data-aos="fade-up">Typical Floor Plan</h2>
-            
-            <div class="max-w-4xl mx-auto bg-slate-50 border-2 border-dashed border-gray-300 rounded-2xl p-8 md:p-16 flex flex-col items-center justify-center min-h-[400px]" data-aos="zoom-in">
-                <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-10" data-aos="fade-up">Typical Floor Plan
+            </h2>
+
+            <div class="max-w-4xl mx-auto bg-slate-50 border-2 border-dashed border-gray-300 rounded-2xl p-8 md:p-16 flex flex-col items-center justify-center min-h-[400px]"
+                data-aos="zoom-in">
+                <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                    </path>
+                </svg>
                 <h3 class="text-xl font-bold text-gray-600 mb-2">1 & 2 BHK Layouts</h3>
                 <p class="text-gray-500 mb-6">TODO: Insert high-resolution floor plan image here</p>
                 <div class="text-sm text-gray-400">
@@ -355,35 +452,56 @@
     <footer id="contact" class="bg-brand text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-brand-light pb-12">
-                
+
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
                         <!-- TODO: Replace with white logo version -->
                         <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z"/>
+                            <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z" />
                         </svg>
                         <span class="font-serif font-bold text-2xl tracking-wider text-white">REYANSH</span>
                     </div>
-                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.</p>
+                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At
+                        Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.
+                    </p>
                 </div>
 
                 <div>
                     <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h4>
                     <div class="space-y-4 text-white">
                         <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
                             <p class="text-sm">
                                 Reyansh Vedanta, Junction of Road No. 4 & 10, <br>
                                 Daulat Nagar, Borivali (E), Mumbai - 400 066
                             </p>
                         </div>
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <a href="mailto:info@reyanshgroup.co.in" class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <a href="mailto:info@reyanshgroup.co.in"
+                                class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
                         </div>
                         <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                            <a href="https://www.reyanshgroup.co.in" target="_blank" class="text-sm hover:text-white transition-colors">www.reyanshgroup.co.in</a>
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                                </path>
+                            </svg>
+                            <a href="https://www.reyanshgroup.co.in" target="_blank"
+                                class="text-sm hover:text-white transition-colors">www.reyanshgroup.co.in</a>
                         </div>
                     </div>
                 </div>
@@ -392,7 +510,8 @@
                     <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-3 text-white text-sm">
                         <li><a href="landing.html" class="hover:text-gray-300 transition-colors">Main Website</a></li>
-                        <li><a href="#highlights" class="hover:text-gray-300 transition-colors">Project Highlights</a></li>
+                        <li><a href="#highlights" class="hover:text-gray-300 transition-colors">Project Highlights</a>
+                        </li>
                         <li><a href="#amenities" class="hover:text-gray-300 transition-colors">Amenities</a></li>
                     </ul>
                 </div>
@@ -408,6 +527,12 @@
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Force scroll to top on reload so the door always starts closed
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
         document.getElementById('year').textContent = new Date().getFullYear();
         AOS.init({
             once: true,
@@ -424,21 +549,23 @@
             const doorArch = document.getElementById('door-arch');
             const heroContent = document.getElementById('hero-content');
             const scrollIndicator = document.getElementById('scroll-indicator');
-            
-            const heroTag = document.getElementById('hero-tag');
-            const heroTitle = document.getElementById('hero-title');
-            const heroDesc = document.getElementById('hero-desc');
-            const heroActions = document.getElementById('hero-actions');
+            const heroVideo = document.getElementById('hero-video');
+
 
             if (!container) return;
+
+            let maxProgress = 0;
 
             window.addEventListener('scroll', () => {
                 const rect = container.getBoundingClientRect();
                 const windowHeight = window.innerHeight;
-                
+
                 // Calculate progress from 0 to 1
-                let progress = -rect.top / (rect.height - windowHeight);
-                progress = Math.max(0, Math.min(1, progress));
+                let currentProgress = -rect.top / (rect.height - windowHeight);
+                currentProgress = Math.max(0, Math.min(1, currentProgress));
+                
+                maxProgress = Math.max(maxProgress, currentProgress);
+                let progress = maxProgress;
 
                 // Hide scroll indicator once scrolled
                 if (progress > 0.05) {
@@ -451,7 +578,7 @@
                 let doorOpenProgress = Math.min(1, progress / 0.4);
                 // Easing for smoother door opening (ease-in-out)
                 let easedDoor = doorOpenProgress < 0.5 ? 2 * doorOpenProgress * doorOpenProgress : -1 + (4 - 2 * doorOpenProgress) * doorOpenProgress;
-                
+
                 doorLeft.style.transform = `translateX(-${easedDoor * 100}%)`;
                 doorRight.style.transform = `translateX(${easedDoor * 100}%)`;
 
@@ -461,9 +588,9 @@
                 let easedScale = Math.pow(scaleProgress, 3);
                 // Base scale is 1, max scale is around 40 (enough to fill screen)
                 let currentScale = 1 + easedScale * 40;
-                
+
                 doorArch.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
-                
+
                 // Fade out the arch as it gets huge to avoid pixelated edges or artifacts
                 if (currentScale > 15) {
                     doorArch.style.opacity = Math.max(0, 1 - (currentScale - 15) / 5).toString();
@@ -474,25 +601,54 @@
                 // Hero Content comes into focus
                 if (progress > 0.3) {
                     heroContent.style.transform = `scale(1)`;
-                    
-                    // Trigger hero text animations
-                    heroTag.classList.remove('opacity-0', 'translate-y-8');
-                    heroTitle.classList.remove('opacity-0', 'translate-y-8');
-                    heroDesc.classList.remove('opacity-0', 'translate-y-8');
-                    heroActions.classList.remove('opacity-0', 'translate-y-8');
                 } else {
                     heroContent.style.transform = `scale(1.1)`;
-                    
-                    heroTag.classList.add('opacity-0', 'translate-y-8');
-                    heroTitle.classList.add('opacity-0', 'translate-y-8');
-                    heroDesc.classList.add('opacity-0', 'translate-y-8');
-                    heroActions.classList.add('opacity-0', 'translate-y-8');
+                }
+
+                // Play video when door is fully open (progress >= 0.4)
+                if (progress >= 0.4) {
+                    if (heroVideo && heroVideo.paused) {
+                        heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+                    }
+                } else {
+                    if (heroVideo && !heroVideo.paused) {
+                        heroVideo.pause();
+                    }
                 }
             });
-            
+
             // Trigger scroll event once on load to set initial state
             window.dispatchEvent(new Event('scroll'));
+
+            // Load high-resolution video in the background and swap it seamlessly
+            const highResUrl = 'assets/vendata-web-video.mp4';
+            const preloader = document.createElement('video');
+            preloader.preload = 'auto';
+            preloader.src = highResUrl;
+            
+            preloader.addEventListener('canplaythrough', function onCanPlay() {
+                if (heroVideo) {
+                    const currentTime = heroVideo.currentTime;
+                    const isPaused = heroVideo.paused;
+                    
+                    heroVideo.src = highResUrl;
+                    heroVideo.load();
+                    
+                    // Wait for the new video's metadata to load before seeking
+                    const onLoadedMetadata = () => {
+                        heroVideo.currentTime = currentTime;
+                        if (!isPaused) {
+                            heroVideo.play().catch(e => console.log("Play interrupted after swap:", e));
+                        }
+                        heroVideo.removeEventListener('loadedmetadata', onLoadedMetadata);
+                    };
+                    
+                    heroVideo.addEventListener('loadedmetadata', onLoadedMetadata);
+                }
+                preloader.removeEventListener('canplaythrough', onCanPlay);
+            });
         });
     </script>
 </body>
+
 </html>
