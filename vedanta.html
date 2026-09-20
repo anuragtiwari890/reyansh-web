@@ -91,7 +91,7 @@
                     <a href="#connectivity"
                         class="text-gray-600 hover:text-brand font-medium transition-colors">Connectivity</a>
                     <a href="#contact"
-                        class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-brand/30">
+                        class="bg-dark hover:bg-dark-light text-white px-6 py-2.5 rounded-md font-semibold transition-colors shadow-lg shadow-dark/30">
                         Inquire Now
                     </a>
                 </div>
@@ -216,11 +216,161 @@
                     </ul>
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <!-- TODO: Replace with the actual tower rendering -->
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
-                        alt="Reyansh Vedanta Tower"
-                        class="rounded-2xl shadow-2xl relative z-10 w-full object-cover h-[600px]">
-                    <div class="absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0">
+                    <!-- Carousel Container -->
+                    <div class="relative w-full h-[600px] rounded-2xl shadow-2xl overflow-hidden group z-10"
+                        id="highlights-carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+
+                        <!-- Images -->
+                        <!-- Slide 1 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 carousel-slide">
+                            <img src="assets/vedanta-images/building-birds-eyes-view.png" alt="Vedanta Elevation"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">The
+                                    Architecture</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Iconic & Elegant</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Experience the towering presence and
+                                    thoughtful master plan from a breathtaking perspective.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/building-moonlight-day-view.png" alt="Night View"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Night
+                                    Elegance</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Moonlight Serenade</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">The beauty of Vedanta shines through
+                                    the night with a sophisticated and calming glow.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/terrace-with-amenities.png" alt="Terrace Amenities"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Terrace
+                                    Oasis</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Sky-Level Luxury</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Unwind with panoramic views,
+                                    beautifully landscaped gardens, and exclusive lounging areas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/flat-interior.jpg" alt="Flat Interior"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Premium
+                                    Living</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Thoughtful Spaces</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Every corner is crafted for
+                                    tranquility, bringing natural light and seamless ventilation to your home.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/parking.jpg" alt="Parking Area"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Everyday
+                                    Ease</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Secured Parking</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Spacious and highly secured parking
+                                    designed for your absolute peace of mind and convenience.</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress Indicators (Story style) -->
+                        <div class="absolute top-6 left-6 right-6 flex gap-2 z-20">
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(0)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(1)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(2)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(3)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(4)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button onclick="prevSlide()"
+                            class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="nextSlide()"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Decorative Border -->
+                    <div
+                        class="absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0 pointer-events-none transition-transform group-hover:scale-[1.02] duration-500">
                     </div>
                 </div>
             </div>
@@ -228,19 +378,68 @@
     </section>
 
     <!-- Lifestyle Philosophy Section -->
-    <section class="py-24 bg-brand text-white text-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up">
-            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight">Space for life to feel lighter</h2>
-            <p class="text-lg md:text-xl text-brand-light mb-10 leading-relaxed">
-                Some homes give you space. Some homes give you convenience. Some homes give you peace of mind. <br><br>
-                At <span class="font-bold text-white">Reyansh Vedanta</span>, they come together in one address. This is
-                where shared routines feel warmer, city access feels easier, and the future feels more rewarding.
-            </p>
-            <div
-                class="flex flex-wrap justify-center gap-8 md:gap-16 mt-12 font-serif font-bold text-3xl md:text-5xl text-accent/90 tracking-widest uppercase">
-                <span data-aos="fade-up" data-aos-delay="100">Live</span>
-                <span data-aos="fade-up" data-aos-delay="200">Connect</span>
-                <span data-aos="fade-up" data-aos-delay="300">Grow</span>
+    <section class="py-24 bg-dark text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Side: Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight text-gradient">Space for life to feel lighter</h2>
+                    <p class="text-lg md:text-xl text-slate-300/90 font-light mb-10 leading-relaxed">
+                        Some homes give you space. Some homes give you convenience. Some homes give you peace of mind. <br><br>
+                        At <span class="font-bold text-accent">Reyansh Vedanta</span>, they come together in one address. This is
+                        where shared routines feel warmer, city access feels easier, and the future feels more rewarding.
+                    </p>
+                    <div
+                        class="flex flex-wrap gap-6 md:gap-10 mt-12 font-serif font-bold text-2xl md:text-4xl text-accent/90 tracking-widest uppercase">
+                        <span data-aos="fade-up" data-aos-delay="100">Live</span>
+                        <span data-aos="fade-up" data-aos-delay="200">Connect</span>
+                        <span data-aos="fade-up" data-aos-delay="300">Grow</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="lg:pl-8">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/20 relative overflow-hidden">
+                        <!-- Decorative gradient blob -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl pointer-events-none"></div>
+                        
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2 relative z-10">Register Your Interest</h3>
+                        <p class="text-white/80 mb-6 text-sm relative z-10">Connect with our experts today to know more about Reyansh Vedanta.</p>
+
+                        <form class="space-y-4 relative z-10"
+                            onsubmit="event.preventDefault(); alert('Thank you! Our team will contact you shortly.');">
+                            <div>
+                                <input type="text" required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                    placeholder="Full Name">
+                            </div>
+                            <div>
+                                <input type="tel" required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                    placeholder="Phone Number (+91)">
+                            </div>
+                            <div>
+                                <input type="email" required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                    placeholder="Email Address">
+                            </div>
+                            <div>
+                                <select required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white [&>option]:text-dark">
+                                    <option value="" disabled selected>Configuration Interest</option>
+                                    <option value="1bhk">1 BHK</option>
+                                    <option value="2bhk">2 BHK</option>
+                                </select>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-accent hover:bg-accent-light text-dark font-bold py-3.5 px-4 rounded-lg transition-colors mt-4 text-lg shadow-lg">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -262,8 +461,7 @@
                 <!-- Amenity 1 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="0">
-                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=600&q=80"
-                        alt="Party Lawn"
+                    <img src="assets/vedanta-images/party-lawn.png" alt="Party Lawn"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
@@ -273,8 +471,7 @@
                 <!-- Amenity 2 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1596766467362-e19ecb0051e5?auto=format&fit=crop&w=600&q=80"
-                        alt="Zen Garden"
+                    <img src="assets/vedanta-images/zen-garden.png" alt="Zen Garden"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
@@ -284,8 +481,7 @@
                 <!-- Amenity 3 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
-                        alt="Reflexology Area"
+                    <img src="assets/vedanta-images/reflexology-area.png" alt="Reflexology Area"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
@@ -295,19 +491,17 @@
                 <!-- Amenity 4 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1552674605-15c2145eba82?auto=format&fit=crop&w=600&q=80"
-                        alt="Jogging Track"
+                    <img src="assets/vedanta-images/gazebo-seating.png" alt="Gazebo Seating"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
-                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Jogging Track</h3>
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Gazebo Seating</h3>
                     </div>
                 </div>
                 <!-- Amenity 5 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80"
-                        alt="Yoga Deck"
+                    <img src="assets/vedanta-images/yoga-deck.png" alt="Yoga Deck"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
@@ -317,8 +511,7 @@
                 <!-- Amenity 6 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
                     data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1506869640319-fee1a2a3eb45?auto=format&fit=crop&w=600&q=80"
-                        alt="Senior Citizen Seating"
+                    <img src="assets/vedanta-images/senior-citizen-seating.png" alt="Senior Citizen Seating"
                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 w-full p-4 text-center">
@@ -330,98 +523,172 @@
     </section>
 
     <!-- Connectivity Section -->
-    <section id="connectivity" class="py-24 bg-dark text-white relative">
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80"
-                class="w-full h-full object-cover">
-        </div>
+    <section id="connectivity" class="py-24 bg-dark text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-accent mb-4">Calmly Connected</h2>
-                <p class="text-xl text-gray-300">A quieter address. A more connected life.</p>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Every important place, effortlessly close. Live close to
-                    the city, live closer to peace.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Connectivity -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
-                    data-aos-delay="0">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Connectivity</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>S. V. Road</span> <span
-                                class="text-accent font-semibold">Instant</span></li>
-                        <li class="flex justify-between"><span>Ovaripada Metro Station</span> <span
-                                class="text-accent font-semibold">750 m</span></li>
-                        <li class="flex justify-between"><span>Western Express Highway</span> <span
-                                class="text-accent font-semibold">800 m</span></li>
-                        <li class="flex justify-between"><span>Dahisar Station (East)</span> <span
-                                class="text-accent font-semibold">1.1 km</span></li>
-                        <li class="flex justify-between"><span>Borivali Station (East)</span> <span
-                                class="text-accent font-semibold">5 mins walk</span></li>
-                    </ul>
+                <!-- Left Side: Map Image -->
+                <div data-aos="fade-right" class="w-full">
+                    <img src="assets/vedanta-images/connectivity-map.png" alt="Connectivity Map"
+                        class="w-full h-auto rounded-2xl shadow-2xl bg-white/10 p-2 border border-white/20">
                 </div>
 
-                <!-- Shopping -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Shopping &
-                        Entertainment</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Oberoi Sky City Mall</span> <span
-                                class="text-accent font-semibold">3.4 km</span></li>
-                        <li class="flex justify-between"><span>Thakur Mall</span> <span
-                                class="text-accent font-semibold">4.8 km</span></li>
-                    </ul>
+                <!-- Right Side: Content -->
+                <div data-aos="fade-left" class="space-y-10 lg:pl-4">
+                    <div>
+                        <h2 class="text-2xl md:text-4xl font-serif font-bold text-white uppercase leading-tight mb-4">
+                            Every Important Place,<br>Effortlessly Close</h2>
+                        <div class="w-20 h-1 bg-accent"></div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 md:gap-6 mt-6 items-start">
+                        <!-- Connectivity -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Connectivity
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>S. V.
+                                        Road</span> <span class="font-semibold text-accent text-right">Instant</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Ovaripada Metro</span> <span class="font-semibold text-accent text-right">750
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>W. E.
+                                        Highway</span> <span class="font-semibold text-accent text-right">800 m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Dahisar Stn (E)</span> <span class="font-semibold text-accent text-right">1.1
+                                        km</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Borivali Stn (E)</span> <span
+                                        class="font-semibold text-accent text-right">5 mins walk</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Religious Places -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                </svg>
+                                Religious Places
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Siddhi
+                                        Hanuman Mandir</span> <span class="font-semibold text-accent text-right">In
+                                        premises</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Shree
+                                        Digambar Mandir</span> <span class="font-semibold text-accent text-right">1
+                                        min</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Shree
+                                        Krishna Mandir</span> <span class="font-semibold text-accent text-right">1
+                                        min</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Ambe Mata Mandir</span> <span
+                                        class="font-semibold text-accent text-right">1 min</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Education -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                                </svg>
+                                Educational
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>St.
+                                        Xavier's High</span> <span class="font-semibold text-accent text-right">400
+                                        m</span></li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Shailendra School</span> <span
+                                        class="font-semibold text-accent text-right">800 m</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Rustomjee Cambridge</span>
+                                    <span class="font-semibold text-accent text-right">2.0 km</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Hospitals -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                Hospitals
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Navneet Hospital</span> <span class="font-semibold text-accent text-right">400
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Northern Care</span> <span class="font-semibold text-accent text-right">700
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Sanjivani Hospital</span> <span
+                                        class="font-semibold text-accent text-right">850 m</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Shopping -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors sm:col-span-2">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                                Shopping & Ent.
+                            </h3>
+                            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-white/90">
+                                <li
+                                    class="flex justify-between items-center sm:border-b-0 border-b border-white/10 pb-2">
+                                    <span>Oberoi
+                                        Sky City</span> <span class="font-semibold text-accent text-right">3.4 km</span>
+                                </li>
+                                <li
+                                    class="flex justify-between items-center sm:border-b-0 border-b border-white/10 pb-2">
+                                    <span>Thakur
+                                        Mall</span> <span class="font-semibold text-accent text-right">4.8 km</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
 
-                <!-- Education -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Educational Institutes
-                    </h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>St. Xavier's High School</span> <span
-                                class="text-accent font-semibold">400 m</span></li>
-                        <li class="flex justify-between"><span>Shailendra School</span> <span
-                                class="text-accent font-semibold">800 m</span></li>
-                        <li class="flex justify-between"><span>Rustomjee Cambridge</span> <span
-                                class="text-accent font-semibold">2.0 km</span></li>
-                    </ul>
-                </div>
-
-                <!-- Hospitals -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
-                    data-aos-delay="300">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Hospitals & Diagnostics
-                    </h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Navneet Hospital</span> <span
-                                class="text-accent font-semibold">400 m</span></li>
-                        <!-- Fixed brochure typo from km to m -->
-                        <li class="flex justify-between"><span>Northern Care</span> <span
-                                class="text-accent font-semibold">700 m</span></li>
-                        <li class="flex justify-between"><span>Sanjivani Hospital</span> <span
-                                class="text-accent font-semibold">850 m</span></li>
-                    </ul>
-                </div>
-
-                <!-- Religious -->
-                <div class="bg-slate-800/80 p-8 rounded-xl backdrop-blur-sm border border-slate-700" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <h3 class="text-xl font-bold text-white mb-4 border-b border-slate-600 pb-2">Religious Places</h3>
-                    <ul class="space-y-3 text-gray-300">
-                        <li class="flex justify-between"><span>Siddhi Hanuman Mandir</span> <span
-                                class="text-accent font-semibold">In premises</span></li>
-                        <li class="flex justify-between"><span>Shree Digambar Mandir</span> <span
-                                class="text-accent font-semibold">1 min</span></li>
-                        <li class="flex justify-between"><span>Shri Krishna Mandir</span> <span
-                                class="text-accent font-semibold">1 min</span></li>
-                        <li class="flex justify-between"><span>Ambe Mata Mandir</span> <span
-                                class="text-accent font-semibold">1 min</span></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -432,26 +699,69 @@
             <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-10" data-aos="fade-up">Typical Floor Plan
             </h2>
 
-            <div class="max-w-4xl mx-auto bg-slate-50 border-2 border-dashed border-gray-300 rounded-2xl p-8 md:p-16 flex flex-col items-center justify-center min-h-[400px]"
-                data-aos="zoom-in">
-                <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                    </path>
-                </svg>
-                <h3 class="text-xl font-bold text-gray-600 mb-2">1 & 2 BHK Layouts</h3>
-                <p class="text-gray-500 mb-6">TODO: Insert high-resolution floor plan image here</p>
-                <div class="text-sm text-gray-400">
-                    Image should showcase the detailed Typical Floor Plan from the brochure.
+            <div class="max-w-4xl mx-auto relative group rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 min-h-[400px]" id="floor-plan-container" data-aos="zoom-in">
+                
+                <!-- Blurred Image -->
+                <img src="assets/vedanta-images/blurr-floor-plan.png" alt="Floor Plan" class="w-full h-auto object-cover transition-opacity duration-500" id="floor-plan-image">
+                
+                <!-- Overlay before submit -->
+                <div class="absolute inset-0 bg-dark/40 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:bg-dark/60 z-10" id="floor-plan-overlay">
+                    <svg class="w-16 h-16 text-white mb-4 drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span class="text-white font-bold text-xl drop-shadow-md">Click to View Floor Plan</span>
                 </div>
+
+                <!-- Form Pop-up overlay (Hidden initially) -->
+                <div class="absolute inset-0 bg-dark/90 flex-col items-center justify-center p-6 hidden backdrop-blur-sm z-20 cursor-default" id="floor-plan-form-container">
+                    <div class="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl relative transition-transform transform scale-95 opacity-0 duration-300" id="floor-plan-form-box">
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-dark transition-colors" id="close-form-btn">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <h3 class="text-2xl font-bold font-serif text-dark mb-2">Unlock Floor Plan</h3>
+                        <p class="text-gray-500 mb-6 text-sm">Please provide your details to view and download the floor plan.</p>
+                        
+                        <form id="floor-plan-form" class="space-y-4 text-left">
+                            <div>
+                                <label for="fp-name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                <input type="text" id="fp-name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="fp-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="fp-phone" required pattern="[0-9]{10}" placeholder="10 digit number" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="fp-email" class="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
+                                <input type="email" id="fp-email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors">
+                            </div>
+                            <button type="submit" class="w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-lg transition-colors mt-6 shadow-md hover:shadow-lg">
+                                View Floor Plan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Post-submit Success Overlay (Hidden initially) -->
+                <div class="absolute bottom-6 right-6 hidden z-10 cursor-default" id="download-btn-container">
+                    <a href="assets/vedanta-images/floor-plan.png" download="Reyansh_Vedanta_Floor_Plan.png" class="bg-accent hover:bg-accent-dark text-white font-bold py-2 px-6 rounded-lg shadow-lg flex items-center gap-2 transition-transform hover:-translate-y-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download Floor Plan
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-brand text-white pt-16 pb-8">
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-brand-light pb-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-dark-light pb-12">
 
                 <div class="lg:col-span-2">
                     <div class="flex items-center gap-3 mb-6">
@@ -563,7 +873,7 @@
                 // Calculate progress from 0 to 1
                 let currentProgress = -rect.top / (rect.height - windowHeight);
                 currentProgress = Math.max(0, Math.min(1, currentProgress));
-                
+
                 maxProgress = Math.max(maxProgress, currentProgress);
                 let progress = maxProgress;
 
@@ -625,15 +935,15 @@
             const preloader = document.createElement('video');
             preloader.preload = 'auto';
             preloader.src = highResUrl;
-            
+
             preloader.addEventListener('canplaythrough', function onCanPlay() {
                 if (heroVideo) {
                     const currentTime = heroVideo.currentTime;
                     const isPaused = heroVideo.paused;
-                    
+
                     heroVideo.src = highResUrl;
                     heroVideo.load();
-                    
+
                     // Wait for the new video's metadata to load before seeking
                     const onLoadedMetadata = () => {
                         heroVideo.currentTime = currentTime;
@@ -642,11 +952,210 @@
                         }
                         heroVideo.removeEventListener('loadedmetadata', onLoadedMetadata);
                     };
-                    
+
                     heroVideo.addEventListener('loadedmetadata', onLoadedMetadata);
                 }
                 preloader.removeEventListener('canplaythrough', onCanPlay);
             });
+        });
+
+        // Highlights Carousel Script
+        const slides = document.querySelectorAll('.carousel-slide');
+        const progressBars = document.querySelectorAll('.carousel-progress');
+        const slideImgs = document.querySelectorAll('.slide-img');
+        const slideTexts = document.querySelectorAll('.slide-text');
+
+        let currentSlide = 0;
+        let slideTimeout;
+        const slideDuration = 5000; // 5 seconds per slide
+        let isCarouselPaused = false;
+        let slideStartTime = Date.now();
+        let remainingTime = slideDuration;
+
+        function updateCarousel(newIndex, isResuming = false) {
+            if (!isResuming) {
+                // Reset current slide
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0', 'pointer-events-none');
+                slideTexts[currentSlide].classList.remove('translate-y-0');
+                slideTexts[currentSlide].classList.add('translate-y-4');
+                slideImgs[currentSlide].style.transform = 'scale(1.05)';
+
+                // Set all previous progress bars to 100%, and future ones to 0%
+                progressBars.forEach((bar, idx) => {
+                    bar.style.transitionDuration = '0ms';
+                    if (idx < newIndex) {
+                        bar.style.width = '100%';
+                    } else {
+                        bar.style.width = '0%';
+                    }
+                });
+
+                currentSlide = newIndex;
+                remainingTime = slideDuration;
+
+                // Show new slide
+                slides[currentSlide].classList.remove('opacity-0', 'pointer-events-none');
+                slides[currentSlide].classList.add('opacity-100');
+            }
+
+            slideStartTime = Date.now();
+
+            // Animate elements
+            setTimeout(() => {
+                if (!isResuming) {
+                    slideTexts[currentSlide].classList.remove('translate-y-4');
+                    slideTexts[currentSlide].classList.add('translate-y-0');
+                    slideImgs[currentSlide].style.transform = 'scale(1)';
+                }
+
+                if (!isCarouselPaused) {
+                    progressBars[currentSlide].style.transitionDuration = `${remainingTime}ms`;
+                    progressBars[currentSlide].style.width = '100%';
+                }
+            }, 50);
+        }
+
+        window.nextSlide = function () {
+            let next = (currentSlide + 1) % slides.length;
+            updateCarousel(next);
+            resetTimeout();
+        };
+
+        window.prevSlide = function () {
+            let prev = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel(prev);
+            resetTimeout();
+        };
+
+        window.goToSlide = function (index) {
+            if (index === currentSlide) return;
+            updateCarousel(index);
+            resetTimeout();
+        };
+
+        function resetTimeout() {
+            clearTimeout(slideTimeout);
+            if (!isCarouselPaused) {
+                slideTimeout = setTimeout(() => {
+                    window.nextSlide();
+                }, remainingTime);
+            }
+        }
+
+        window.pauseCarousel = function () {
+            if (isCarouselPaused) return;
+            isCarouselPaused = true;
+            clearTimeout(slideTimeout);
+
+            const elapsedTime = Date.now() - slideStartTime;
+            remainingTime = Math.max(0, remainingTime - elapsedTime);
+
+            const currentWidth = progressBars[currentSlide].offsetWidth;
+            const parentWidth = progressBars[currentSlide].parentElement.offsetWidth;
+            const percentage = (currentWidth / parentWidth) * 100;
+
+            progressBars[currentSlide].style.transitionDuration = '0ms';
+            progressBars[currentSlide].style.width = `${percentage}%`;
+        };
+
+        window.resumeCarousel = function () {
+            if (!isCarouselPaused) return;
+            isCarouselPaused = false;
+
+            updateCarousel(currentSlide, true);
+            resetTimeout();
+        };
+
+        // Floor Plan Interaction
+        const fpContainer = document.getElementById('floor-plan-container');
+        const fpOverlay = document.getElementById('floor-plan-overlay');
+        const fpFormContainer = document.getElementById('floor-plan-form-container');
+        const fpFormBox = document.getElementById('floor-plan-form-box');
+        const fpForm = document.getElementById('floor-plan-form');
+        const closeFormBtn = document.getElementById('close-form-btn');
+        const fpImage = document.getElementById('floor-plan-image');
+        const downloadBtnContainer = document.getElementById('download-btn-container');
+
+        let isFloorPlanUnlocked = false;
+
+        if (fpContainer) {
+            fpContainer.addEventListener('click', (e) => {
+                if (!isFloorPlanUnlocked && fpFormContainer.classList.contains('hidden')) {
+                    fpFormContainer.classList.remove('hidden');
+                    fpFormContainer.classList.add('flex');
+                    // trigger animation
+                    setTimeout(() => {
+                        fpFormBox.classList.remove('scale-95', 'opacity-0');
+                        fpFormBox.classList.add('scale-100', 'opacity-100');
+                    }, 10);
+                }
+            });
+        }
+
+        const closeForm = (e) => {
+            if (e) {
+                e.stopPropagation();
+            }
+            if (fpFormBox) {
+                fpFormBox.classList.remove('scale-100', 'opacity-100');
+                fpFormBox.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    fpFormContainer.classList.remove('flex');
+                    fpFormContainer.classList.add('hidden');
+                }, 300);
+            }
+        };
+
+        if (closeFormBtn) {
+            closeFormBtn.addEventListener('click', closeForm);
+        }
+        
+        if (fpFormBox) {
+            // Prevent clicks inside form from bubbling up to container
+            fpFormBox.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        if (fpForm) {
+            fpForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                isFloorPlanUnlocked = true;
+                
+                // Close form
+                closeForm();
+                
+                // Update Image to clear version
+                setTimeout(() => {
+                    fpImage.classList.add('opacity-0');
+                    setTimeout(() => {
+                        fpImage.src = 'assets/vedanta-images/floor-plan.png';
+                        fpImage.classList.remove('opacity-0');
+                        
+                        // Hide click overlay
+                        fpOverlay.classList.add('hidden');
+                        
+                        // Show download button
+                        downloadBtnContainer.classList.remove('hidden');
+                        
+                        // Remove container hover effects and cursor pointer
+                        fpContainer.classList.remove('cursor-pointer', 'hover:shadow-xl');
+                    }, 300); // Wait for fade out
+                }, 300); // Wait for form close animation
+            });
+        }
+
+        // Initialize carousel if it exists
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof slides !== 'undefined' && slides.length > 0) {
+                // Give a slight delay before starting the first slide animation
+                setTimeout(() => {
+                    updateCarousel(0);
+                    resetTimeout();
+                }, 500);
+            }
         });
     </script>
 </body>
