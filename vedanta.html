@@ -118,15 +118,19 @@
         <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-dark">
 
             <!-- The New Place (Hero Content) -->
-            <div class="absolute inset-0 z-0 scale-110 transition-transform duration-1000 ease-out" id="hero-content">
+            <div class="absolute top-20 inset-x-0 bottom-0 z-0 scale-110 transition-transform duration-1000 ease-out" id="hero-content">
                 <picture class="w-full h-full block">
                     <!-- Mobile Screen (up to 767px) -->
-                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.webp" type="image/webp">
-                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.jpg" type="image/jpeg">
+                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.webp"
+                        type="image/webp">
+                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.jpg"
+                        type="image/jpeg">
 
                     <!-- Laptop / Desktop Screen (768px and above) -->
-                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.webp" type="image/webp">
-                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.jpg" type="image/jpeg">
+                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.webp"
+                        type="image/webp">
+                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.jpg"
+                        type="image/jpeg">
 
                     <!-- Fallback Image -->
                     <img src="assets/vedanta-images/vedanta-hero-laptop.jpg" alt="Reyansh Vedanta - Come Home to Calm"
@@ -136,7 +140,7 @@
 
             <!-- The Arch and Doors -->
             <div id="door-arch"
-                class="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform"
+                class="absolute z-20 top-[calc(50%+2.5rem)] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform"
                 style="box-shadow: 0 0 0 150vmax #0F172A;">
 
                 <!-- Door Frame Inner Shadow for Depth -->
@@ -188,8 +192,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div data-aos="fade-up">
-                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand mb-3 md:mb-4">The Serene Life</h2>
-                    <p class="text-base sm:text-lg text-gray-600 mb-6 lg:mb-10">Experience the world of Vedanta. A meticulously planned
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand mb-3 md:mb-4">The Serene
+                        Life</h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 lg:mb-10">Experience the world of Vedanta. A
+                        meticulously planned
                         residential tower designed for modern lifestyles.</p>
 
                     <ul class="hidden lg:block space-y-6">
