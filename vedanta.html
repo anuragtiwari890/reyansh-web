@@ -119,10 +119,19 @@
 
             <!-- The New Place (Hero Content) -->
             <div class="absolute inset-0 z-0 scale-110 transition-transform duration-1000 ease-out" id="hero-content">
-                <video id="hero-video" class="w-full h-full object-cover" muted loop playsinline preload="auto">
-                    <source src="assets/vendata-web-video-compressed.mp4" type="video/mp4">
-                </video>
+                <picture class="w-full h-full block">
+                    <!-- Mobile Screen (up to 767px) -->
+                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.webp" type="image/webp">
+                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.jpg" type="image/jpeg">
 
+                    <!-- Laptop / Desktop Screen (768px and above) -->
+                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.webp" type="image/webp">
+                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.jpg" type="image/jpeg">
+
+                    <!-- Fallback Image -->
+                    <img src="assets/vedanta-images/vedanta-hero-laptop.jpg" alt="Reyansh Vedanta - Come Home to Calm"
+                        class="w-full h-full object-cover object-center" fetchpriority="high">
+                </picture>
             </div>
 
             <!-- The Arch and Doors -->
@@ -175,15 +184,15 @@
     </div>
 
     <!-- Highlights Section -->
-    <section id="highlights" class="py-24 bg-white relative">
+    <section id="highlights" class="py-16 md:py-24 bg-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <div data-aos="fade-up">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand mb-4">The Serene Life</h2>
-                    <p class="text-lg text-gray-600 mb-10">Experience the world of Vedanta. A meticulously planned
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand mb-3 md:mb-4">The Serene Life</h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 lg:mb-10">Experience the world of Vedanta. A meticulously planned
                         residential tower designed for modern lifestyles.</p>
 
-                    <ul class="space-y-6">
+                    <ul class="hidden lg:block space-y-6">
                         <li onmouseenter="goToSlide(3); pauseCarousel()" onmouseleave="resumeCarousel()"
                             class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                             <div class="bg-accent/20 p-3 rounded-lg text-accent">
@@ -231,7 +240,7 @@
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
                     <!-- Carousel Container -->
-                    <div class="relative w-full h-[600px] rounded-2xl shadow-2xl overflow-hidden group z-10"
+                    <div class="relative w-full h-[460px] sm:h-[520px] lg:h-[600px] rounded-2xl shadow-2xl overflow-hidden group z-10"
                         id="highlights-carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
 
                         <!-- Images -->
@@ -364,16 +373,16 @@
                         </div>
 
                         <!-- Navigation Arrows -->
-                        <button onclick="prevSlide()"
-                            class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-lg">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button onclick="prevSlide()" aria-label="Previous Slide"
+                            class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 19l-7-7 7-7"></path>
                             </svg>
                         </button>
-                        <button onclick="nextSlide()"
-                            class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 hover:bg-white/30 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity z-20 shadow-lg">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button onclick="nextSlide()" aria-label="Next Slide"
+                            class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                 </path>
                             </svg>
@@ -383,7 +392,7 @@
 
                     <!-- Decorative Border -->
                     <div
-                        class="absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0 pointer-events-none transition-transform group-hover:scale-[1.02] duration-500">
+                        class="hidden sm:block absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0 pointer-events-none transition-transform group-hover:scale-[1.02] duration-500">
                     </div>
                 </div>
             </div>
@@ -920,8 +929,6 @@
             const doorArch = document.getElementById('door-arch');
             const heroContent = document.getElementById('hero-content');
             const scrollIndicator = document.getElementById('scroll-indicator');
-            const heroVideo = document.getElementById('hero-video');
-
 
             if (!container) return;
 
@@ -975,49 +982,10 @@
                 } else {
                     heroContent.style.transform = `scale(1.1)`;
                 }
-
-                // Play video when door is fully open (progress >= 0.4)
-                if (progress >= 0.4) {
-                    if (heroVideo && heroVideo.paused) {
-                        heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
-                    }
-                } else {
-                    if (heroVideo && !heroVideo.paused) {
-                        heroVideo.pause();
-                    }
-                }
             });
 
             // Trigger scroll event once on load to set initial state
             window.dispatchEvent(new Event('scroll'));
-
-            // Load high-resolution video in the background and swap it seamlessly
-            const highResUrl = 'assets/vendata-web-video.mp4';
-            const preloader = document.createElement('video');
-            preloader.preload = 'auto';
-            preloader.src = highResUrl;
-
-            preloader.addEventListener('canplaythrough', function onCanPlay() {
-                if (heroVideo) {
-                    const currentTime = heroVideo.currentTime;
-                    const isPaused = heroVideo.paused;
-
-                    heroVideo.src = highResUrl;
-                    heroVideo.load();
-
-                    // Wait for the new video's metadata to load before seeking
-                    const onLoadedMetadata = () => {
-                        heroVideo.currentTime = currentTime;
-                        if (!isPaused) {
-                            heroVideo.play().catch(e => console.log("Play interrupted after swap:", e));
-                        }
-                        heroVideo.removeEventListener('loadedmetadata', onLoadedMetadata);
-                    };
-
-                    heroVideo.addEventListener('loadedmetadata', onLoadedMetadata);
-                }
-                preloader.removeEventListener('canplaythrough', onCanPlay);
-            });
         });
 
         // Highlights Carousel Script
@@ -1127,6 +1095,34 @@
             updateCarousel(currentSlide, true);
             resetTimeout();
         };
+
+        // Mobile Touch Swipe Support for Highlights Carousel
+        const carouselElement = document.getElementById('highlights-carousel');
+        if (carouselElement) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            carouselElement.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                pauseCarousel();
+            }, { passive: true });
+
+            carouselElement.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                const touchEndY = e.changedTouches[0].screenY;
+                resumeCarousel();
+                const diffX = touchStartX - touchEndX;
+                const diffY = touchStartY - touchEndY;
+                // Only trigger if horizontal swipe is greater than vertical scroll
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                    if (diffX > 0) {
+                        window.nextSlide();
+                    } else {
+                        window.prevSlide();
+                    }
+                }
+            }, { passive: true });
+        }
 
         // Floor Plan Interaction
         const fpContainer = document.getElementById('floor-plan-container');
