@@ -280,27 +280,29 @@
     <div id="door-scroll-container" class="relative h-[300vh] bg-dark">
         <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-dark">
 
-            <!-- Top Right MahaRERA Badge -->
-            <div class="absolute top-24 right-3 sm:top-24 sm:right-6 md:right-8 z-30 pointer-events-auto">
-                <div
-                    class="flex items-center gap-2 sm:gap-2.5 bg-dark/75 hover:bg-dark/90 backdrop-blur-md border border-white/20 rounded-lg px-2.5 py-1.5 sm:px-3 sm:py-2 shadow-xl transition-all">
-                    <div class="text-right">
+            <!-- MahaRERA Badge: Mobile Top-Right (Ultra-Compact), Laptop/Desktop Top-Left (Clear of Elevation) -->
+            <div class="absolute top-[84px] right-2.5 sm:top-24 sm:right-auto sm:left-6 md:left-8 z-30 pointer-events-auto">
+                <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                    rel="noopener noreferrer"
+                    title="Verify MahaRERA Registration: PR1180002602217"
+                    class="group flex items-center gap-1.5 sm:gap-2.5 bg-dark/80 hover:bg-dark/95 backdrop-blur-md border border-white/20 hover:border-accent/50 rounded-lg px-2 py-1 sm:px-3 sm:py-2 shadow-xl transition-all">
+                    <div class="text-right sm:text-left">
                         <span
-                            class="block text-[8px] sm:text-[9.5px] text-gray-300 font-medium tracking-wide uppercase leading-tight">MahaRERA
+                            class="hidden sm:block text-[9.5px] text-gray-300 font-medium tracking-wide uppercase leading-tight">MahaRERA
                             Registration No.:</span>
                         <span
-                            class="block text-[9.5px] sm:text-xs font-bold text-accent font-mono tracking-wider leading-tight">PR1180002602217</span>
-                        <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-[7.5px] sm:text-[8.5px] text-gray-400 hover:text-white underline block leading-tight mt-0.5">maharerait.maharashtra.gov.in</a>
+                            class="block sm:hidden text-[7px] text-gray-300 font-medium tracking-wide uppercase leading-tight">MahaRERA No.</span>
+                        <span
+                            class="block text-[8.5px] sm:text-xs font-bold text-accent group-hover:text-accent-light font-mono tracking-wider leading-tight">PR1180002602217</span>
+                        <span
+                            class="hidden sm:block text-[8.5px] text-gray-400 group-hover:text-white underline leading-tight mt-0.5">maharerait.maharashtra.gov.in</span>
                     </div>
-                    <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
-                        title="Verify MahaRERA Registration: PR1180002602217"
-                        class="bg-white p-0.5 sm:p-1 rounded shadow-sm hover:scale-105 transition-transform flex-shrink-0">
+                    <div
+                        class="bg-white p-0.5 sm:p-1 rounded shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
                         <img src="assets/vedanta-images/Qrcode.png" alt="MahaRERA QR Code - PR1180002602217"
-                            class="w-7 h-7 sm:w-9 sm:h-9 object-contain">
-                    </a>
-                </div>
+                            class="w-5 h-5 sm:w-9 sm:h-9 object-contain">
+                    </div>
+                </a>
             </div>
 
             <!-- The New Place (Hero Content) -->
