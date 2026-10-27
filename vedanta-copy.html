@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyansh Vedanta | Come Home to Calm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#8B1E3F',
+                            dark: '#6A162F',
+                            light: '#A62A4F'
+                        },
+                        accent: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E6C96A'
+                        },
+                        dark: {
+                            DEFAULT: '#0F172A',
+                            light: '#1E293B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #D4AF37, #E6C96A);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes brandPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 30, 63, 0.55);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(139, 30, 63, 0);
+            }
+        }
+
+        @keyframes waPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45);
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+        }
+
+        .pulse-brand {
+            animation: brandPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .pulse-wa {
+            animation: waPulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-slate-50 antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 transition-all duration-300 glass-nav shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Left Section: Mobile Menu Icon + Reyansh Vedanta Logo -->
+                <div class="flex items-center gap-2.5 sm:gap-3">
+                    <!-- Mobile Hamburger Button (On the left on mobile, hidden on md+) -->
+                    <button id="mobile-menu-btn" onclick="openMobileDrawer()" type="button"
+                        aria-label="Open Navigation Drawer"
+                        class="md:hidden p-2 -ml-1.5 rounded-xl text-slate-800 hover:text-brand hover:bg-slate-100 active:scale-95 transition-all focus:outline-none cursor-pointer">
+                        <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Reyansh Vedanta Logo Image -->
+                    <div class="flex-shrink-0 flex items-center select-none cursor-default">
+                        <img src="assets/vedanta-images/Reyansh Vedanta_1.svg" alt="Reyansh Vedanta"
+                            class="h-9 sm:h-10 md:h-12 w-auto object-contain pointer-events-none">
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links (md and above) -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#highlights"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Highlights</a>
+                    <a href="#amenities"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Amenities</a>
+                    <a href="#connectivity"
+                        class="text-gray-600 hover:text-brand font-medium transition-colors">Connectivity</a>
+                    <button onclick="openEnquireModal('enquire')"
+                        class="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-md font-semibold transition-all shadow-lg shadow-brand/30 hover:scale-[1.02] active:scale-95 cursor-pointer">
+                        Enquire Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= MOBILE OFF-CANVAS DRAWER (< md) ================= -->
+    <!-- Dark Backdrop Overlay -->
+    <div id="mobile-drawer-backdrop" onclick="closeMobileDrawer()"
+        class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+        aria-hidden="true">
+    </div>
+
+    <!-- Off-Canvas Left Drawer -->
+    <aside id="mobile-drawer"
+        class="fixed top-0 left-0 bottom-0 z-50 w-[300px] sm:w-[340px] max-w-[85vw] bg-white shadow-2xl flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+        aria-label="Mobile Navigation Drawer">
+
+        <!-- Drawer Header -->
+        <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50/60">
+            <div class="flex items-center">
+                <img src="assets/vedanta-images/Reyansh Vedanta_1.svg" alt="Reyansh Vedanta"
+                    class="h-8 w-auto object-contain">
+            </div>
+            <button onclick="closeMobileDrawer()" type="button" aria-label="Close Navigation Drawer"
+                class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors cursor-pointer active:scale-95">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Drawer Navigation Links -->
+        <div class="flex-1 overflow-y-auto px-4 py-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 block mb-2">Quick
+                Navigation</span>
+            <a href="#highlights" onclick="closeMobileDrawer()"
+                class="flex items-center justify-between p-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-brand font-semibold text-sm transition-colors group">
+                <span class="flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-lg bg-accent/15 text-accent flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>Project Highlights</span>
+                </span>
+                <svg class="w-4 h-4 text-slate-300 group-hover:text-brand group-hover:translate-x-0.5 transition-all"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="#amenities" onclick="closeMobileDrawer()"
+                class="flex items-center justify-between p-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-brand font-semibold text-sm transition-colors group">
+                <span class="flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-lg bg-accent/15 text-accent flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>Luxury Amenities</span>
+                </span>
+                <svg class="w-4 h-4 text-slate-300 group-hover:text-brand group-hover:translate-x-0.5 transition-all"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="#connectivity" onclick="closeMobileDrawer()"
+                class="flex items-center justify-between p-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-brand font-semibold text-sm transition-colors group">
+                <span class="flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-lg bg-accent/15 text-accent flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </span>
+                    <span>Connectivity & Location</span>
+                </span>
+                <svg class="w-4 h-4 text-slate-300 group-hover:text-brand group-hover:translate-x-0.5 transition-all"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <a href="#contact" onclick="closeMobileDrawer()"
+                class="flex items-center justify-between p-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-brand font-semibold text-sm transition-colors group">
+                <span class="flex items-center gap-3">
+                    <span
+                        class="w-8 h-8 rounded-lg bg-accent/15 text-accent flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span>Contact Details</span>
+                </span>
+                <svg class="w-4 h-4 text-slate-300 group-hover:text-brand group-hover:translate-x-0.5 transition-all"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+
+            <!-- CTA inside Drawer -->
+            <div class="pt-4">
+                <button onclick="closeMobileDrawer(); openEnquireModal()"
+                    class="w-full bg-brand hover:bg-brand-dark text-white py-3.5 rounded-xl font-bold text-sm text-center transition-all shadow-lg shadow-brand/30 active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+                    <span>Enquire Now</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Drawer Footer: Quick Call & WhatsApp -->
+        <div class="p-4 border-t border-slate-100 bg-slate-50/70">
+            <div class="flex items-center gap-2">
+                <a href="tel:+919967597929"
+                    class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-semibold hover:border-slate-300 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Call</span>
+                </a>
+                <a href="https://wa.me/919967597929?text=Hi%20Reyansh%20Group%2C%20I%20am%20interested%20in%20Reyansh%20Vedanta%20%28Borivali%20East%29.%20Please%20share%20details%20regarding%20floor%20plans%2C%20pricing%2C%20and%20availability."
+                    target="_blank" rel="noopener noreferrer"
+                    class="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-[#25D366] text-white text-xs font-semibold shadow-sm hover:bg-[#20ba59] transition-colors">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.79C8.84 6.79 8.52 6.86 8.25 7.15C7.98 7.44 7.22 8.16 7.22 9.61C7.22 11.07 8.28 12.47 8.43 12.67C8.58 12.87 10.51 15.84 13.46 17.12C14.16 17.43 14.71 17.61 15.13 17.75C15.83 17.97 16.48 17.94 16.98 17.86C17.54 17.78 18.7 17.16 18.94 16.48C19.18 15.81 19.18 15.23 19.11 15.11C19.04 14.99 18.84 14.92 18.54 14.77C18.25 14.62 16.8 13.91 16.53 13.81C16.26 13.71 16.06 13.66 15.87 13.96C15.67 14.25 15.1 14.92 14.93 15.12C14.76 15.31 14.59 15.34 14.29 15.19C14 15.04 12.77 14.64 11.31 13.34C10.18 12.33 9.41 11.08 9.19 10.7C8.97 10.33 9.17 10.12 9.32 9.97C9.45 9.84 9.61 9.62 9.76 9.45C9.91 9.28 9.96 9.15 10.06 8.95C10.16 8.76 10.11 8.58 10.04 8.44C9.96 8.29 9.39 6.89 9.14 6.32C8.91 5.76 8.67 5.84 8.49 5.83C8.32 5.83 8.12 5.82 7.92 5.82L9.04 6.79Z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+            <p class="text-[10px] text-center text-slate-400 mt-2 font-mono">MahaRERA: PR1180002602217</p>
+        </div>
+    </aside>
+
+    <!-- Interactive Door Scroll Hero Section -->
+    <div id="door-scroll-container" class="relative h-[300vh] bg-dark">
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-dark">
+
+            <!-- MahaRERA Badge: Mobile Top-Right (Ultra-Compact), Laptop/Desktop Top-Left (Clear of Elevation) -->
+            <div class="absolute top-[84px] right-2.5 sm:top-24 sm:right-auto sm:left-6 md:left-8 z-30 pointer-events-auto">
+                <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                    rel="noopener noreferrer"
+                    title="Verify MahaRERA Registration: PR1180002602217"
+                    class="group flex items-center gap-1.5 sm:gap-2.5 bg-dark/80 hover:bg-dark/95 backdrop-blur-md border border-white/20 hover:border-accent/50 rounded-lg px-2 py-1 sm:px-3 sm:py-2 shadow-xl transition-all">
+                    <div class="text-right sm:text-left">
+                        <span
+                            class="hidden sm:block text-[9.5px] text-gray-300 font-medium tracking-wide uppercase leading-tight">MahaRERA
+                            Registration No.:</span>
+                        <span
+                            class="block sm:hidden text-[7px] text-gray-300 font-medium tracking-wide uppercase leading-tight">MahaRERA No.</span>
+                        <span
+                            class="block text-[8.5px] sm:text-xs font-bold text-accent group-hover:text-accent-light font-mono tracking-wider leading-tight">PR1180002602217</span>
+                        <span
+                            class="hidden sm:block text-[8.5px] text-gray-400 group-hover:text-white underline leading-tight mt-0.5">maharerait.maharashtra.gov.in</span>
+                    </div>
+                    <div
+                        class="bg-white p-0.5 sm:p-1 rounded shadow-sm group-hover:scale-105 transition-transform flex-shrink-0">
+                        <img src="assets/vedanta-images/Qrcode.png" alt="MahaRERA QR Code - PR1180002602217"
+                            class="w-5 h-5 sm:w-9 sm:h-9 object-contain">
+                    </div>
+                </a>
+            </div>
+
+            <!-- The New Place (Hero Content) -->
+            <div class="absolute top-20 inset-x-0 bottom-0 z-0 scale-110 transition-transform duration-1000 ease-out"
+                id="hero-content">
+                <picture class="w-full h-full block">
+                    <!-- Mobile Screen (up to 767px) -->
+                    <!-- <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-mobile.webp"
+                        type="image/webp"> -->
+                    <source media="(max-width: 767px)" srcset="assets/vedanta-images/vedanta-hero-header-mobile.jpeg"
+                        type="image/jpeg">
+
+                    <!-- Laptop / Desktop Screen (768px and above) -->
+                    <!-- <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-laptop.webp"
+                        type="image/webp"> -->
+                    <source media="(min-width: 768px)" srcset="assets/vedanta-images/vedanta-hero-header.jpeg"
+                        type="image/jpeg">
+
+                    <!-- Fallback Image -->
+                    <img src="assets/vedanta-images/vedanta-hero-header.jpeg" alt="Reyansh Vedanta - Come Home to Calm"
+                        class="w-full h-full object-cover object-center" fetchpriority="high">
+                </picture>
+            </div>
+
+            <!-- The Arch and Doors -->
+            <div id="door-arch"
+                class="absolute z-20 top-[calc(50%+2.5rem)] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] md:w-[450px] h-[500px] md:h-[650px] rounded-t-full overflow-hidden will-change-transform"
+                style="box-shadow: 0 0 0 150vmax #0F172A;">
+
+                <!-- Door Frame Inner Shadow for Depth -->
+                <div
+                    class="absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.8)] z-30 pointer-events-none rounded-t-full">
+                </div>
+
+                <!-- Left Door -->
+                <div id="door-left"
+                    class="absolute top-0 left-0 w-1/2 h-full bg-slate-800 border-r border-accent shadow-[inset_-15px_0_30px_rgba(0,0,0,0.6)] origin-left will-change-transform flex items-center justify-end pr-3 md:pr-5 z-20">
+                    <!-- Door details -->
+                    <div
+                        class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tl-full rounded-bl-sm opacity-50">
+                    </div>
+                    <!-- Handle -->
+                    <div
+                        class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                    </div>
+                </div>
+
+                <!-- Right Door -->
+                <div id="door-right"
+                    class="absolute top-0 right-0 w-1/2 h-full bg-slate-800 border-l border-accent shadow-[inset_15px_0_30px_rgba(0,0,0,0.6)] origin-right will-change-transform flex items-center justify-start pl-3 md:pl-5 z-20">
+                    <!-- Door details -->
+                    <div
+                        class="absolute inset-2 md:inset-4 border border-slate-600/50 rounded-tr-full rounded-br-sm opacity-50">
+                    </div>
+                    <!-- Handle -->
+                    <div
+                        class="w-1.5 md:w-2 h-20 md:h-24 bg-gradient-to-b from-accent-light via-accent to-yellow-600 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div id="scroll-indicator"
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-70 transition-opacity duration-500">
+                <span class="text-white text-sm tracking-widest uppercase mb-2 font-medium">Scroll to Open</span>
+                <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+                    <div class="w-1 h-2 bg-accent rounded-full animate-bounce"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Highlights Section -->
+    <section id="highlights" class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-brand mb-3 md:mb-4">The Serene
+                        Life</h2>
+                    <p class="text-base sm:text-lg text-gray-600 mb-6 lg:mb-10">Experience the world of Vedanta. A
+                        meticulously planned
+                        residential tower designed for modern lifestyles.</p>
+
+                    <ul class="hidden lg:block space-y-6">
+                        <li onmouseenter="goToSlide(3); pauseCarousel()" onmouseleave="resumeCarousel()"
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-dark">1 & 2 BHK Lifestyle Homes</span>
+                        </li>
+                        <li onmouseenter="goToSlide(0); pauseCarousel()" onmouseleave="resumeCarousel()"
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-dark">Elegant Residential Tower</span>
+                        </li>
+                        <li onmouseenter="goToSlide(2); pauseCarousel()" onmouseleave="resumeCarousel()"
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-dark">Modern Lifestyle Amenities</span>
+                        </li>
+                        <li onmouseenter="goToSlide(4); pauseCarousel()" onmouseleave="resumeCarousel()"
+                            class="flex items-center gap-4 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+                            <div class="bg-accent/20 p-3 rounded-lg text-accent">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-lg font-semibold text-dark">Secured Car Parking Space</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
+                    <!-- Carousel Container -->
+                    <div class="relative w-full h-[460px] sm:h-[520px] lg:h-[600px] rounded-2xl shadow-2xl overflow-hidden group z-10"
+                        id="highlights-carousel" onmouseenter="pauseCarousel()" onmouseleave="resumeCarousel()">
+
+                        <!-- Images -->
+                        <!-- Slide 1 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-100 carousel-slide">
+                            <img src="assets/vedanta-images/building-birds-eyes-view.png" alt="Vedanta Elevation"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">The
+                                    Architecture</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Iconic & Elegant</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Experience the towering presence and
+                                    thoughtful master plan from a breathtaking perspective.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/building-moonlight-day-view.png" alt="Night View"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Night
+                                    Elegance</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Moonlight Serenade</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">The beauty of Vedanta shines through
+                                    the night with a sophisticated and calming glow.</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/terrace-image-re-imagined.png" alt="Terrace Amenities"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Terrace
+                                    Oasis</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Sky-Level Luxury</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Unwind with panoramic views,
+                                    beautifully landscaped gardens, and exclusive lounging areas.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/flat-interior.jpg" alt="Flat Interior"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Premium
+                                    Living</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Thoughtful Spaces</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Every corner is crafted for
+                                    tranquility, bringing natural light and seamless ventilation to your home.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div
+                            class="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 pointer-events-none carousel-slide">
+                            <img src="assets/vedanta-images/parking.jpg" alt="Parking Area"
+                                class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10000ms] ease-linear slide-img">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80">
+                            </div>
+                            <div
+                                class="absolute bottom-10 left-10 right-10 text-white transform translate-y-4 transition-transform duration-1000 slide-text">
+                                <span
+                                    class="text-accent uppercase tracking-widest text-sm font-bold mb-2 block drop-shadow-md">Everyday
+                                    Ease</span>
+                                <h3 class="text-3xl font-serif font-bold mb-3 drop-shadow-md">Secured Parking</h3>
+                                <p class="text-gray-200 drop-shadow-md max-w-md">Spacious and highly secured parking
+                                    designed for your absolute peace of mind and convenience.</p>
+                            </div>
+                        </div>
+
+                        <!-- Progress Indicators (Story style) -->
+                        <div class="absolute top-6 left-6 right-6 flex gap-2 z-20">
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(0)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(1)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(2)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(3)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                            <div class="h-1.5 flex-1 bg-white/40 rounded-full overflow-hidden cursor-pointer"
+                                onclick="goToSlide(4)">
+                                <div
+                                    class="h-full bg-accent w-0 rounded-full transition-all ease-linear carousel-progress">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Arrows -->
+                        <button onclick="prevSlide()" aria-label="Previous Slide"
+                            class="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="nextSlide()" aria-label="Next Slide"
+                            class="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-md flex items-center justify-center text-white opacity-80 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity z-20 shadow-lg">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <!-- Decorative Border -->
+                    <div
+                        class="hidden sm:block absolute -bottom-6 -left-6 w-full h-full border-4 border-accent/40 rounded-2xl z-0 pointer-events-none transition-transform group-hover:scale-[1.02] duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Philosophy Section -->
+    <section id="inquire" class="py-24 bg-dark text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Side: Content -->
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold mb-8 leading-tight text-gradient">Space for
+                        life to feel lighter</h2>
+                    <p class="text-lg md:text-xl text-slate-300/90 font-light mb-10 leading-relaxed">
+                        Some homes give you space. Some homes give you convenience. Some homes give you peace of mind.
+                        <br><br>
+                        At <span class="font-bold text-accent">Reyansh Vedanta</span>, they come together in one
+                        address. This is
+                        where shared routines feel warmer, city access feels easier, and the future feels more
+                        rewarding.
+                    </p>
+                    <div
+                        class="flex flex-wrap gap-6 md:gap-10 mt-12 font-serif font-bold text-2xl md:text-4xl text-accent/90 tracking-widest uppercase">
+                        <span data-aos="fade-up" data-aos-delay="100">Live</span>
+                        <span data-aos="fade-up" data-aos-delay="200">Connect</span>
+                        <span data-aos="fade-up" data-aos-delay="300">Grow</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="lg:pl-8">
+                    <div
+                        class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-white/20 relative overflow-hidden">
+                        <!-- Decorative gradient blob -->
+                        <div
+                            class="absolute -top-10 -right-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl pointer-events-none">
+                        </div>
+
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2 relative z-10">Register Your Interest
+                        </h3>
+                        <p class="text-white/80 mb-6 text-sm relative z-10">Connect with our experts today to know more
+                            about Reyansh Vedanta.</p>
+
+                        <form id="inquire-section-form" novalidate class="space-y-4 relative z-10"
+                            onsubmit="handleInquireSectionSubmit(event)">
+                            <div>
+                                <input type="text" id="inq-name" required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                    placeholder="Full Name *">
+                                <p id="inq-name-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                            </div>
+                            <div>
+                                <div class="relative flex items-center">
+                                    <span class="absolute left-3.5 text-sm text-white/60 font-medium select-none">+91</span>
+                                    <input type="tel" id="inq-phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric"
+                                        class="w-full pl-12 pr-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                        placeholder="10-digit Phone Number *">
+                                </div>
+                                <p id="inq-phone-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                            </div>
+                            <div>
+                                <input type="email" id="inq-email"
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white placeholder-white/60"
+                                    placeholder="Email Address (Optional)">
+                                <p id="inq-email-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                            </div>
+                            <div>
+                                <select id="inq-unit" required
+                                    class="w-full px-4 py-3 border border-white/20 bg-white/5 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all text-white [&>option]:text-dark">
+                                    <option value="" disabled selected>Configuration Interest *</option>
+                                    <option value="1bhk">1 BHK</option>
+                                    <option value="2bhk">2 BHK</option>
+                                </select>
+                                <p id="inq-unit-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                            </div>
+                            <button type="submit" id="inq-submit-btn"
+                                class="w-full bg-accent hover:bg-accent-light text-dark font-bold py-3.5 px-4 rounded-lg transition-colors mt-4 text-lg shadow-lg cursor-pointer">
+                                Submit Inquiry
+                            </button>
+                            <p id="inq-success-msg" class="hidden text-center text-sm text-emerald-400 font-semibold mt-2">
+                                Thank you! Your inquiry has been received. Our team will contact you shortly.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Lifestyle
+                    Comforts</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-4">For better routines, healthier
+                    living<br>and more shared moments.</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg mt-4">At Reyansh Vedanta, amenities are designed to
+                    support real daily life—the kind that brings families together, encourages wellness, and adds ease
+                    to every age and stage.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Amenity 1 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <img src="assets/vedanta-images/party-lawn.png" alt="Party Lawn"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Party Lawn</h3>
+                    </div>
+                </div>
+                <!-- Amenity 2 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="assets/vedanta-images/zen-garden.png" alt="Zen Garden"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Zen Garden</h3>
+                    </div>
+                </div>
+                <!-- Amenity 3 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="assets/vedanta-images/reflexology-area.png" alt="Reflexology Area"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Reflexology Area</h3>
+                    </div>
+                </div>
+                <!-- Amenity 4 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="300">
+                    <img src="assets/vedanta-images/gazebo-seating.png" alt="Gazebo Seating"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Gazebo Seating</h3>
+                    </div>
+                </div>
+                <!-- Amenity 5 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <img src="assets/vedanta-images/yoga-deck.png" alt="Yoga Deck"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Yoga Deck</h3>
+                    </div>
+                </div>
+                <!-- Amenity 6 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-md h-72" data-aos="fade-up"
+                    data-aos-delay="500">
+                    <img src="assets/vedanta-images/senior-citizen-seating.png" alt="Senior Citizen Seating"
+                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 text-center">
+                        <h3 class="text-lg font-bold text-white tracking-wider uppercase">Senior Citizen Seating</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connectivity Section -->
+    <section id="connectivity" class="py-24 bg-dark text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left Side: Map Image -->
+                <div data-aos="fade-right" class="w-full">
+                    <img src="assets/vedanta-images/connectivity-map.png" alt="Connectivity Map"
+                        class="w-full h-auto rounded-2xl shadow-2xl bg-white/10 p-2 border border-white/20">
+                </div>
+
+                <!-- Right Side: Content -->
+                <div data-aos="fade-left" class="space-y-10 lg:pl-4">
+                    <div>
+                        <h2 class="text-2xl md:text-4xl font-serif font-bold text-white uppercase leading-tight mb-4">
+                            Every Important Place,<br>Effortlessly Close</h2>
+                        <div class="w-20 h-1 bg-accent"></div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 md:gap-6 mt-6 items-start">
+                        <!-- Connectivity -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                                Connectivity
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>S. V.
+                                        Road</span> <span class="font-semibold text-accent text-right">Instant</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Ovaripada Metro</span> <span class="font-semibold text-accent text-right">750
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>W. E.
+                                        Highway</span> <span class="font-semibold text-accent text-right">800 m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Dahisar Stn (E)</span> <span class="font-semibold text-accent text-right">1.1
+                                        km</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Borivali Stn (E)</span> <span
+                                        class="font-semibold text-accent text-right">5 mins walk</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Religious Places -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                </svg>
+                                Religious Places
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Siddhi
+                                        Hanuman Mandir</span> <span class="font-semibold text-accent text-right">In
+                                        premises</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Shree
+                                        Digambar Mandir</span> <span class="font-semibold text-accent text-right">1
+                                        min</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>Shree
+                                        Krishna Mandir</span> <span class="font-semibold text-accent text-right">1
+                                        min</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Ambe Mata Mandir</span> <span
+                                        class="font-semibold text-accent text-right">1 min</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Education -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                                </svg>
+                                Educational
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2"><span>St.
+                                        Xavier's High</span> <span class="font-semibold text-accent text-right">400
+                                        m</span></li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Shailendra School</span> <span
+                                        class="font-semibold text-accent text-right">800 m</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Rustomjee Cambridge</span>
+                                    <span class="font-semibold text-accent text-right">2.0 km</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Hospitals -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                                Hospitals
+                            </h3>
+                            <ul class="space-y-3 text-sm text-white/90">
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Navneet Hospital</span> <span class="font-semibold text-accent text-right">400
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                    <span>Northern Care</span> <span class="font-semibold text-accent text-right">700
+                                        m</span>
+                                </li>
+                                <li class="flex justify-between items-center pb-1"><span>Sanjivani Hospital</span> <span
+                                        class="font-semibold text-accent text-right">850 m</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Shopping -->
+                        <div
+                            class="bg-white/5 p-5 md:p-6 rounded-xl border border-white/10 hover:border-accent/50 transition-colors sm:col-span-2">
+                            <h3
+                                class="text-base font-bold text-accent mb-4 uppercase tracking-wider flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                                Shopping & Ent.
+                            </h3>
+                            <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm text-white/90">
+                                <li
+                                    class="flex justify-between items-center sm:border-b-0 border-b border-white/10 pb-2">
+                                    <span>Oberoi
+                                        Sky City</span> <span class="font-semibold text-accent text-right">3.4 km</span>
+                                </li>
+                                <li
+                                    class="flex justify-between items-center sm:border-b-0 border-b border-white/10 pb-2">
+                                    <span>Thakur
+                                        Mall</span> <span class="font-semibold text-accent text-right">4.8 km</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor Plans Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-dark mb-10" data-aos="fade-up">Typical Floor Plan
+            </h2>
+
+            <div class="max-w-4xl mx-auto relative group rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 min-h-[400px]"
+                id="floor-plan-container" data-aos="zoom-in">
+
+                <!-- Blurred Image -->
+                <img src="assets/vedanta-images/blurr-floor-plan.png" alt="Floor Plan"
+                    class="w-full h-auto object-cover transition-opacity duration-500" id="floor-plan-image">
+
+                <!-- Overlay before submit -->
+                <div class="absolute inset-0 bg-dark/40 flex flex-col items-center justify-center transition-opacity duration-300 group-hover:bg-dark/60 z-10"
+                    id="floor-plan-overlay">
+                    <svg class="w-16 h-16 text-white mb-4 drop-shadow-md" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <span class="text-white font-bold text-xl drop-shadow-md">Click to View Floor Plan</span>
+                </div>
+
+                <!-- Form Pop-up overlay (Hidden initially) -->
+                <div class="absolute inset-0 bg-dark/90 flex-col items-center justify-center p-6 hidden backdrop-blur-sm z-20 cursor-default"
+                    id="floor-plan-form-container">
+                    <div class="bg-white rounded-xl p-8 max-w-md w-full shadow-2xl relative transition-transform transform scale-95 opacity-0 duration-300"
+                        id="floor-plan-form-box">
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-dark transition-colors"
+                            id="close-form-btn">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <h3 class="text-2xl font-bold font-serif text-dark mb-2">Unlock Floor Plan</h3>
+                        <p class="text-gray-500 mb-6 text-sm">Please provide your details to view and download the floor
+                            plan.</p>
+
+                        <form id="floor-plan-form" novalidate class="space-y-4 text-left">
+                            <div>
+                                <label for="fp-name" class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                                <input type="text" id="fp-name" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                                    placeholder="Your Full Name">
+                                <p id="fp-name-error" class="hidden text-xs text-rose-500 mt-1 font-medium"></p>
+                            </div>
+                            <div>
+                                <label for="fp-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number
+                                    *</label>
+                                <div class="relative flex items-center">
+                                    <span class="absolute left-3 text-sm text-gray-500 font-medium select-none">+91</span>
+                                    <input type="tel" id="fp-phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric"
+                                        placeholder="10-digit mobile number"
+                                        class="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors">
+                                </div>
+                                <p id="fp-phone-error" class="hidden text-xs text-rose-500 mt-1 font-medium"></p>
+                            </div>
+                            <div>
+                                <label for="fp-email" class="block text-sm font-medium text-gray-700 mb-1">Email
+                                    (Optional)</label>
+                                <input type="email" id="fp-email"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                                    placeholder="name@example.com">
+                                <p id="fp-email-error" class="hidden text-xs text-rose-500 mt-1 font-medium"></p>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-lg transition-colors mt-6 shadow-md hover:shadow-lg cursor-pointer">
+                                View Floor Plan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Post-submit Success Overlay (Hidden initially) -->
+                <div class="absolute bottom-6 right-6 hidden z-10 cursor-default" id="download-btn-container">
+                    <a href="assets/vedanta-images/floor-plan.png" download="Reyansh_Vedanta_Floor_Plan.png"
+                        class="bg-accent hover:bg-accent-dark text-white font-bold py-2 px-6 rounded-lg shadow-lg flex items-center gap-2 transition-transform hover:-translate-y-1">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        Download Floor Plan
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-dark text-white pt-16 pb-28 md:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-dark-light pb-12">
+
+                <div class="lg:col-span-2">
+                    <div class="mb-6">
+                        <div class="inline-block bg-white rounded-xl px-4 py-2.5 shadow-lg shadow-black/20">
+                            <img src="assets/vedanta-images/Reyansh Vedanta_1.svg" alt="Reyansh Vedanta"
+                                class="h-8 sm:h-9 w-auto object-contain">
+                        </div>
+                    </div>
+                    <p class="text-white max-w-sm mb-6 leading-relaxed">Built on Values. Made for Generations. At
+                        Reyansh Group, our promise is simple: to build with responsibility and deliver with integrity.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h4>
+                    <div class="space-y-4 text-white">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <p class="text-sm">
+                                Reyansh Vedanta, Junction of Road No. 4 & 10, <br>
+                                Daulat Nagar, Borivali (E), Mumbai - 400 066
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            <a href="tel:+919967597929"
+                                class="text-sm hover:text-accent font-semibold transition-colors">+91 99675 97929</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-[#25D366] fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.79C8.84 6.79 8.52 6.86 8.25 7.15C7.98 7.44 7.22 8.16 7.22 9.61C7.22 11.07 8.28 12.47 8.43 12.67C8.58 12.87 10.51 15.84 13.46 17.12C14.16 17.43 14.71 17.61 15.13 17.75C15.83 17.97 16.48 17.94 16.98 17.86C17.54 17.78 18.7 17.16 18.94 16.48C19.18 15.81 19.18 15.23 19.11 15.11C19.04 14.99 18.84 14.92 18.54 14.77C18.25 14.62 16.8 13.91 16.53 13.81C16.26 13.71 16.06 13.66 15.87 13.96C15.67 14.25 15.1 14.92 14.93 15.12C14.76 15.31 14.59 15.34 14.29 15.19C14 15.04 12.77 14.64 11.31 13.34C10.18 12.33 9.41 11.08 9.19 10.7C8.97 10.33 9.17 10.12 9.32 9.97C9.45 9.84 9.61 9.62 9.76 9.45C9.91 9.28 9.96 9.15 10.06 8.95C10.16 8.76 10.11 8.58 10.04 8.44C9.96 8.29 9.39 6.89 9.14 6.32C8.91 5.76 8.67 5.84 8.49 5.83C8.32 5.83 8.12 5.82 7.92 5.82L9.04 6.79Z" />
+                            </svg>
+                            <a href="https://wa.me/919967597929?text=Hi%20Reyansh%20Group%2C%20I%20am%20interested%20in%20Reyansh%20Vedanta%20%28Borivali%20East%29.%20Please%20share%20details%20regarding%20floor%20plans%2C%20pricing%2C%20and%20availability."
+                                target="_blank" rel="noopener noreferrer"
+                                class="text-sm hover:text-[#25D366] transition-colors">Chat on WhatsApp</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            <a href="mailto:info@reyanshgroup.co.in"
+                                class="text-sm hover:text-white transition-colors">info@reyanshgroup.co.in</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 flex-shrink-0 text-accent" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg>
+                            <span class="text-sm text-gray-300">Reyansh Group</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-white text-sm">
+                        <li><a href="#highlights" class="hover:text-gray-300 transition-colors">Project Highlights</a>
+                        </li>
+                        <li><a href="#amenities" class="hover:text-gray-300 transition-colors">Amenities</a></li>
+                        <li><a href="#connectivity" class="hover:text-gray-300 transition-colors">Connectivity &
+                                Location</a></li>
+                        <li><button onclick="openEnquireModal()"
+                                class="hover:text-accent text-accent font-semibold transition-colors text-left cursor-pointer">Enquire
+                                Now &rarr;</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Standalone MahaRERA QR & Certification Block -->
+            <div class="mb-10 bg-slate-900/60 border border-slate-800 rounded-2xl p-5 sm:p-6">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4 sm:gap-5">
+                        <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                            rel="noopener noreferrer" title="View Project on MahaRERA"
+                            class="bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform flex-shrink-0 block">
+                            <img src="assets/vedanta-images/Qrcode.png" alt="MahaRERA QR Code - PR1180002602217"
+                                class="w-16 h-16 sm:w-20 sm:h-20 object-contain">
+                        </a>
+                        <div>
+                            <span
+                                class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-accent/20 text-accent border border-accent/30 mb-1">
+                                MahaRERA Registered Project
+                            </span>
+                            <h4 class="text-sm sm:text-base font-bold text-white tracking-wide">
+                                Reyansh Vedanta: <span class="font-mono text-accent">PR1180002602217</span>
+                            </h4>
+                            <p class="text-xs text-slate-400 mt-0.5">
+                                Official MahaRERA registration verified. Scan QR code or verify online at <a
+                                    href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-accent hover:underline font-medium">maharerait.maharashtra.gov.in</a>
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full sm:w-auto text-center px-5 py-2.5 rounded-lg bg-accent/10 hover:bg-accent/20 text-accent border border-accent/30 hover:border-accent text-xs font-semibold transition-all shadow-sm flex items-center justify-center gap-2 flex-shrink-0">
+                        <span>Verify on MahaRERA</span>
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Standalone Legal Disclaimer -->
+            <div
+                class="mb-10 pt-6 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-400 leading-relaxed text-justify sm:text-left space-y-2">
+                <p>
+                    <span
+                        class="text-slate-300 font-bold uppercase tracking-wider text-[10px] block mb-1">Disclaimer:</span>
+                    The artistic representations, floor plans, specifications, images, and other details featured herein
+                    are purely indicative and designed for illustrative purposes. Reyansh Group reserves the right to
+                    change, alter, or modify any or all of these in the interest of architectural development and
+                    subject to statutory approvals from competent authorities. The project <strong>Reyansh
+                        Vedanta</strong> is registered on MahaRERA bearing Registration No.
+                    <strong>PR1180002602217</strong>. All plans for the project are subject to further approvals and
+                    modifications from the concerned authorities and promoter. All intending purchasers are advised to
+                    inspect the available plans and approvals at <a
+                        href="https://maharerait.maharashtra.gov.in/project/view/65827" target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-accent hover:underline font-semibold">https://maharerait.maharashtra.gov.in/project/view/65827</a>.
+                </p>
+            </div>
+
+            <div class="text-center text-white text-sm flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; <span id="year"></span> Reyansh Group. All rights reserved.</p>
+                <p class="mt-2 md:mt-0 text-xs text-white/70">Developed for Real Estate Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Force scroll to top on reload so the door always starts closed
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Mobile Left Drawer Handlers
+        window.openMobileDrawer = function () {
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('mobile-drawer-backdrop');
+            if (!drawer || !backdrop) return;
+            drawer.classList.remove('-translate-x-full');
+            drawer.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0', 'pointer-events-none');
+            backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeMobileDrawer = function () {
+            const drawer = document.getElementById('mobile-drawer');
+            const backdrop = document.getElementById('mobile-drawer-backdrop');
+            if (!drawer || !backdrop) return;
+            drawer.classList.remove('translate-x-0');
+            drawer.classList.add('-translate-x-full');
+            backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+            backdrop.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        };
+
+        // Close drawer on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                window.closeMobileDrawer();
+            }
+        });
+
+        // Door Animation Script
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('door-scroll-container');
+            const doorLeft = document.getElementById('door-left');
+            const doorRight = document.getElementById('door-right');
+            const doorArch = document.getElementById('door-arch');
+            const heroContent = document.getElementById('hero-content');
+            const scrollIndicator = document.getElementById('scroll-indicator');
+
+            if (!container) return;
+
+            let maxProgress = 0;
+
+            window.addEventListener('scroll', () => {
+                const rect = container.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Calculate progress from 0 to 1
+                let currentProgress = -rect.top / (rect.height - windowHeight);
+                currentProgress = Math.max(0, Math.min(1, currentProgress));
+
+                maxProgress = Math.max(maxProgress, currentProgress);
+                let progress = maxProgress;
+
+                // Hide scroll indicator once scrolled
+                if (progress > 0.05) {
+                    scrollIndicator.style.opacity = '0';
+                } else {
+                    scrollIndicator.style.opacity = '0.7';
+                }
+
+                // Phase 1: 0 to 0.4 -> Doors slide open
+                let doorOpenProgress = Math.min(1, progress / 0.4);
+                // Easing for smoother door opening (ease-in-out)
+                let easedDoor = doorOpenProgress < 0.5 ? 2 * doorOpenProgress * doorOpenProgress : -1 + (4 - 2 * doorOpenProgress) * doorOpenProgress;
+
+                doorLeft.style.transform = `translateX(-${easedDoor * 100}%)`;
+                doorRight.style.transform = `translateX(${easedDoor * 100}%)`;
+
+                // Phase 2: 0.4 to 0.9 -> Arch scales up
+                let scaleProgress = Math.max(0, (progress - 0.4) / 0.5);
+                // Exponential easing for scale (looks better when zooming)
+                let easedScale = Math.pow(scaleProgress, 3);
+                // Base scale is 1, max scale is around 40 (enough to fill screen)
+                let currentScale = 1 + easedScale * 40;
+
+                doorArch.style.transform = `translate(-50%, -50%) scale(${currentScale})`;
+
+                // Fade out the arch as it gets huge to avoid pixelated edges or artifacts
+                if (currentScale > 15) {
+                    doorArch.style.opacity = Math.max(0, 1 - (currentScale - 15) / 5).toString();
+                } else {
+                    doorArch.style.opacity = '1';
+                }
+
+                // Hero Content comes into focus
+                if (progress > 0.3) {
+                    heroContent.style.transform = `scale(1)`;
+                } else {
+                    heroContent.style.transform = `scale(1.1)`;
+                }
+            });
+
+            // Trigger scroll event once on load to set initial state
+            window.dispatchEvent(new Event('scroll'));
+        });
+
+        // Highlights Carousel Script
+        const slides = document.querySelectorAll('.carousel-slide');
+        const progressBars = document.querySelectorAll('.carousel-progress');
+        const slideImgs = document.querySelectorAll('.slide-img');
+        const slideTexts = document.querySelectorAll('.slide-text');
+
+        let currentSlide = 0;
+        let slideTimeout;
+        const slideDuration = 5000; // 5 seconds per slide
+        let isCarouselPaused = false;
+        let slideStartTime = Date.now();
+        let remainingTime = slideDuration;
+
+        function updateCarousel(newIndex, isResuming = false) {
+            if (!isResuming) {
+                // Reset current slide
+                slides[currentSlide].classList.remove('opacity-100');
+                slides[currentSlide].classList.add('opacity-0', 'pointer-events-none');
+                slideTexts[currentSlide].classList.remove('translate-y-0');
+                slideTexts[currentSlide].classList.add('translate-y-4');
+                slideImgs[currentSlide].style.transform = 'scale(1.05)';
+
+                // Set all previous progress bars to 100%, and future ones to 0%
+                progressBars.forEach((bar, idx) => {
+                    bar.style.transitionDuration = '0ms';
+                    if (idx < newIndex) {
+                        bar.style.width = '100%';
+                    } else {
+                        bar.style.width = '0%';
+                    }
+                });
+
+                currentSlide = newIndex;
+                remainingTime = slideDuration;
+
+                // Show new slide
+                slides[currentSlide].classList.remove('opacity-0', 'pointer-events-none');
+                slides[currentSlide].classList.add('opacity-100');
+            }
+
+            slideStartTime = Date.now();
+
+            // Animate elements
+            setTimeout(() => {
+                if (!isResuming) {
+                    slideTexts[currentSlide].classList.remove('translate-y-4');
+                    slideTexts[currentSlide].classList.add('translate-y-0');
+                    slideImgs[currentSlide].style.transform = 'scale(1)';
+                }
+
+                if (!isCarouselPaused) {
+                    progressBars[currentSlide].style.transitionDuration = `${remainingTime}ms`;
+                    progressBars[currentSlide].style.width = '100%';
+                }
+            }, 50);
+        }
+
+        window.nextSlide = function () {
+            let next = (currentSlide + 1) % slides.length;
+            updateCarousel(next);
+            resetTimeout();
+        };
+
+        window.prevSlide = function () {
+            let prev = (currentSlide - 1 + slides.length) % slides.length;
+            updateCarousel(prev);
+            resetTimeout();
+        };
+
+        window.goToSlide = function (index) {
+            if (index === currentSlide) return;
+            updateCarousel(index);
+            resetTimeout();
+        };
+
+        function resetTimeout() {
+            clearTimeout(slideTimeout);
+            if (!isCarouselPaused) {
+                slideTimeout = setTimeout(() => {
+                    window.nextSlide();
+                }, remainingTime);
+            }
+        }
+
+        window.pauseCarousel = function () {
+            if (isCarouselPaused) return;
+            isCarouselPaused = true;
+            clearTimeout(slideTimeout);
+
+            const elapsedTime = Date.now() - slideStartTime;
+            remainingTime = Math.max(0, remainingTime - elapsedTime);
+
+            const currentWidth = progressBars[currentSlide].offsetWidth;
+            const parentWidth = progressBars[currentSlide].parentElement.offsetWidth;
+            const percentage = (currentWidth / parentWidth) * 100;
+
+            progressBars[currentSlide].style.transitionDuration = '0ms';
+            progressBars[currentSlide].style.width = `${percentage}%`;
+        };
+
+        window.resumeCarousel = function () {
+            if (!isCarouselPaused) return;
+            isCarouselPaused = false;
+
+            updateCarousel(currentSlide, true);
+            resetTimeout();
+        };
+
+        // Mobile Touch Swipe Support for Highlights Carousel
+        const carouselElement = document.getElementById('highlights-carousel');
+        if (carouselElement) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            carouselElement.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                pauseCarousel();
+            }, { passive: true });
+
+            carouselElement.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].screenX;
+                const touchEndY = e.changedTouches[0].screenY;
+                resumeCarousel();
+                const diffX = touchStartX - touchEndX;
+                const diffY = touchStartY - touchEndY;
+                // Only trigger if horizontal swipe is greater than vertical scroll
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+                    if (diffX > 0) {
+                        window.nextSlide();
+                    } else {
+                        window.prevSlide();
+                    }
+                }
+            }, { passive: true });
+        }
+
+        // Floor Plan Interaction
+        const fpContainer = document.getElementById('floor-plan-container');
+        const fpOverlay = document.getElementById('floor-plan-overlay');
+        const fpFormContainer = document.getElementById('floor-plan-form-container');
+        const fpFormBox = document.getElementById('floor-plan-form-box');
+        const fpForm = document.getElementById('floor-plan-form');
+        const closeFormBtn = document.getElementById('close-form-btn');
+        const fpImage = document.getElementById('floor-plan-image');
+        const downloadBtnContainer = document.getElementById('download-btn-container');
+
+        let isFloorPlanUnlocked = false;
+
+        if (fpContainer) {
+            fpContainer.addEventListener('click', (e) => {
+                if (!isFloorPlanUnlocked && fpFormContainer.classList.contains('hidden')) {
+                    fpFormContainer.classList.remove('hidden');
+                    fpFormContainer.classList.add('flex');
+                    // trigger animation
+                    setTimeout(() => {
+                        fpFormBox.classList.remove('scale-95', 'opacity-0');
+                        fpFormBox.classList.add('scale-100', 'opacity-100');
+                    }, 10);
+                }
+            });
+        }
+
+        const closeForm = (e) => {
+            if (e) {
+                e.stopPropagation();
+            }
+            if (fpFormBox) {
+                fpFormBox.classList.remove('scale-100', 'opacity-100');
+                fpFormBox.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    fpFormContainer.classList.remove('flex');
+                    fpFormContainer.classList.add('hidden');
+                }, 300);
+            }
+        };
+
+        if (closeFormBtn) {
+            closeFormBtn.addEventListener('click', closeForm);
+        }
+
+        if (fpFormBox) {
+            // Prevent clicks inside form from bubbling up to container
+            fpFormBox.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+
+        // ================= FORM VALIDATION HELPERS =================
+        function showInputError(input, errorEl, message) {
+            if (!input) return;
+            if (message) {
+                input.classList.add('!border-rose-500', 'focus:!ring-rose-500');
+                if (errorEl) {
+                    errorEl.textContent = message;
+                    errorEl.classList.remove('hidden');
+                }
+            } else {
+                input.classList.remove('!border-rose-500', 'focus:!ring-rose-500');
+                if (errorEl) {
+                    errorEl.textContent = '';
+                    errorEl.classList.add('hidden');
+                }
+            }
+        }
+
+        function validatePhone(input, errorEl, isRequired = true) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                if (isRequired) {
+                    showInputError(input, errorEl, 'Mobile number is required');
+                    return false;
+                }
+                showInputError(input, errorEl, null);
+                return true;
+            }
+            if (val.length < 10) {
+                const diff = 10 - val.length;
+                showInputError(input, errorEl, `Please enter a 10-digit number (${diff} more digit${diff > 1 ? 's' : ''} needed)`);
+                return false;
+            }
+            if (!/^[6-9]\d{9}$/.test(val)) {
+                showInputError(input, errorEl, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9');
+                return false;
+            }
+            showInputError(input, errorEl, null);
+            return true;
+        }
+
+        function validateName(input, errorEl) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                showInputError(input, errorEl, 'Full name is required');
+                return false;
+            }
+            if (val.length < 2) {
+                showInputError(input, errorEl, 'Please enter at least 2 characters');
+                return false;
+            }
+            if (!/^[a-zA-Z\s.']{2,60}$/.test(val)) {
+                showInputError(input, errorEl, 'Name should only contain letters');
+                return false;
+            }
+            showInputError(input, errorEl, null);
+            return true;
+        }
+
+        function validateEmail(input, errorEl, isRequired = false) {
+            if (!input) return true;
+            const val = input.value.trim();
+            if (!val) {
+                if (isRequired) {
+                    showInputError(input, errorEl, 'Email address is required');
+                    return false;
+                }
+                showInputError(input, errorEl, null);
+                return true;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val)) {
+                showInputError(input, errorEl, 'Please enter a valid email address');
+                return false;
+            }
+            showInputError(input, errorEl, null);
+            return true;
+        }
+
+        function validateSelect(select, errorEl) {
+            if (!select) return true;
+            const val = select.value;
+            if (!val) {
+                showInputError(select, errorEl, 'Please select a configuration');
+                return false;
+            }
+            showInputError(select, errorEl, null);
+            return true;
+        }
+
+        function setupPhoneInput(input, errorEl) {
+            if (!input) return;
+            input.setAttribute('maxlength', '10');
+            input.setAttribute('inputmode', 'numeric');
+
+            input.addEventListener('input', function () {
+                let cleaned = this.value.replace(/\D/g, '');
+                // If user pasted 91XXXXXXXXXX or 0XXXXXXXXXX, strip the prefix
+                if (cleaned.length === 12 && cleaned.startsWith('91')) {
+                    cleaned = cleaned.slice(2);
+                } else if (cleaned.length === 11 && cleaned.startsWith('0')) {
+                    cleaned = cleaned.slice(1);
+                }
+                if (cleaned.length > 10) {
+                    cleaned = cleaned.slice(0, 10);
+                }
+                this.value = cleaned;
+
+                if (cleaned.length === 10) {
+                    validatePhone(this, errorEl);
+                } else if (errorEl && !errorEl.classList.contains('hidden') && cleaned.length > 0) {
+                    showInputError(input, errorEl, null);
+                }
+            });
+
+            input.addEventListener('blur', function () {
+                if (this.value.trim().length > 0) {
+                    validatePhone(this, errorEl);
+                }
+            });
+        }
+
+        // Initialize phone inputs and live field clearers
+        function initFormValidations() {
+            setupPhoneInput(document.getElementById('eq-phone'), document.getElementById('eq-phone-error'));
+            setupPhoneInput(document.getElementById('fp-phone'), document.getElementById('fp-phone-error'));
+            setupPhoneInput(document.getElementById('inq-phone'), document.getElementById('inq-phone-error'));
+
+            // Live clear for name fields
+            ['eq-name', 'fp-name', 'inq-name'].forEach(id => {
+                const el = document.getElementById(id);
+                const err = document.getElementById(id + '-error');
+                el?.addEventListener('input', () => {
+                    if (el.value.trim().length >= 2) showInputError(el, err, null);
+                });
+            });
+
+            // Live clear for select fields
+            ['eq-unit', 'inq-unit'].forEach(id => {
+                const el = document.getElementById(id);
+                const err = document.getElementById(id + '-error');
+                el?.addEventListener('change', () => {
+                    if (el.value) showInputError(el, err, null);
+                });
+            });
+
+            // Live clear for email fields
+            ['eq-email', 'fp-email', 'inq-email'].forEach(id => {
+                const el = document.getElementById(id);
+                const err = document.getElementById(id + '-error');
+                el?.addEventListener('input', () => {
+                    if (!el.value.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim())) {
+                        showInputError(el, err, null);
+                    }
+                });
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initFormValidations);
+        } else {
+            initFormValidations();
+        }
+
+        if (fpForm) {
+            fpForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const fpName = document.getElementById('fp-name');
+                const fpNameErr = document.getElementById('fp-name-error');
+                const fpPhone = document.getElementById('fp-phone');
+                const fpPhoneErr = document.getElementById('fp-phone-error');
+                const fpEmail = document.getElementById('fp-email');
+                const fpEmailErr = document.getElementById('fp-email-error');
+
+                const isNameValid = validateName(fpName, fpNameErr);
+                const isPhoneValid = validatePhone(fpPhone, fpPhoneErr, true);
+                const isEmailValid = validateEmail(fpEmail, fpEmailErr, false);
+
+                if (!isNameValid || !isPhoneValid || !isEmailValid) {
+                    if (!isNameValid) fpName?.focus();
+                    else if (!isPhoneValid) fpPhone?.focus();
+                    else if (!isEmailValid) fpEmail?.focus();
+                    return;
+                }
+
+                isFloorPlanUnlocked = true;
+
+                // Close form
+                closeForm();
+
+                // Update Image to clear version
+                setTimeout(() => {
+                    fpImage.classList.add('opacity-0');
+                    setTimeout(() => {
+                        fpImage.src = 'assets/vedanta-images/floor-plan.png';
+                        fpImage.classList.remove('opacity-0');
+
+                        // Hide click overlay
+                        fpOverlay.classList.add('hidden');
+
+                        // Show download button
+                        downloadBtnContainer.classList.remove('hidden');
+
+                        // Remove container hover effects and cursor pointer
+                        fpContainer.classList.remove('cursor-pointer', 'hover:shadow-xl');
+                    }, 300); // Wait for fade out
+                }, 300); // Wait for form close animation
+            });
+        }
+
+        // Initialize carousel if it exists
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof slides !== 'undefined' && slides.length > 0) {
+                // Give a slight delay before starting the first slide animation
+                setTimeout(() => {
+                    updateCarousel(0);
+                    resetTimeout();
+                }, 500);
+            }
+        });
+
+        // Enquire Modal Functions
+        let currentModalMode = 'enquire';
+
+        function openEnquireModal(mode = 'enquire') {
+            currentModalMode = mode;
+            const modal = document.getElementById('enquireModal');
+            const card = document.getElementById('enquireModalCard');
+            const success = document.getElementById('enquireSuccessState');
+            const title = document.getElementById('enquireModalTitle');
+            const subtitle = document.getElementById('enquireModalSubtitle');
+            const submitSpan = document.getElementById('eq-submit-text');
+            if (!modal || !card) return;
+
+            if (mode === 'brochure') {
+                if (title) title.textContent = 'Request Brochure';
+                if (subtitle) subtitle.textContent = 'Share your contact details to download the official Reyansh Vedanta project brochure & price list.';
+                if (submitSpan) submitSpan.textContent = 'Download Brochure';
+            } else {
+                if (title) title.textContent = 'Enquire Now';
+                if (subtitle) subtitle.textContent = 'Experience serene, elevated living in Borivali (East). Share your details for exclusive brochures & pricing.';
+                if (submitSpan) submitSpan.textContent = 'Submit Enquiry';
+            }
+
+            if (success) {
+                success.classList.add('hidden');
+                success.classList.remove('flex');
+            }
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            requestAnimationFrame(() => {
+                card.classList.remove('scale-95', 'opacity-0');
+                card.classList.add('scale-100', 'opacity-100');
+            });
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEnquireModal() {
+            const modal = document.getElementById('enquireModal');
+            const card = document.getElementById('enquireModalCard');
+            if (!modal || !card) return;
+
+            card.classList.remove('scale-100', 'opacity-100');
+            card.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+                const form = document.getElementById('enquireModalForm');
+                if (form) form.reset();
+                ['eq-name', 'eq-phone', 'eq-email', 'eq-unit'].forEach(id => {
+                    const el = document.getElementById(id);
+                    const err = document.getElementById(id + '-error');
+                    showInputError(el, err, null);
+                });
+            }, 250);
+        }
+
+        function handleEnquirySubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('eq-name');
+            const nameErr = document.getElementById('eq-name-error');
+            const phoneInput = document.getElementById('eq-phone');
+            const phoneErr = document.getElementById('eq-phone-error');
+            const emailInput = document.getElementById('eq-email');
+            const emailErr = document.getElementById('eq-email-error');
+            const unitSelect = document.getElementById('eq-unit');
+            const unitErr = document.getElementById('eq-unit-error');
+
+            const isNameValid = validateName(nameInput, nameErr);
+            const isPhoneValid = validatePhone(phoneInput, phoneErr, true);
+            const isEmailValid = validateEmail(emailInput, emailErr, false);
+            const isUnitValid = validateSelect(unitSelect, unitErr);
+
+            if (!isNameValid || !isPhoneValid || !isEmailValid || !isUnitValid) {
+                if (!isNameValid) nameInput?.focus();
+                else if (!isPhoneValid) phoneInput?.focus();
+                else if (!isUnitValid) unitSelect?.focus();
+                else if (!isEmailValid) emailInput?.focus();
+                return;
+            }
+
+            const submitBtn = document.getElementById('eq-submit-btn');
+            const success = document.getElementById('enquireSuccessState');
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>${currentModalMode === 'brochure' ? 'Preparing Brochure...' : 'Submitting Enquiry...'}</span>
+                `;
+            }
+
+            setTimeout(() => {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = `
+                        <span id="eq-submit-text">${currentModalMode === 'brochure' ? 'Download Brochure' : 'Submit Enquiry'}</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    `;
+                }
+                if (success) {
+                    success.classList.remove('hidden');
+                    success.classList.add('flex');
+                }
+            }, 600);
+        }
+
+        function handleInquireSectionSubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('inq-name');
+            const nameErr = document.getElementById('inq-name-error');
+            const phoneInput = document.getElementById('inq-phone');
+            const phoneErr = document.getElementById('inq-phone-error');
+            const emailInput = document.getElementById('inq-email');
+            const emailErr = document.getElementById('inq-email-error');
+            const unitSelect = document.getElementById('inq-unit');
+            const unitErr = document.getElementById('inq-unit-error');
+
+            const isNameValid = validateName(nameInput, nameErr);
+            const isPhoneValid = validatePhone(phoneInput, phoneErr, true);
+            const isEmailValid = validateEmail(emailInput, emailErr, false);
+            const isUnitValid = validateSelect(unitSelect, unitErr);
+
+            if (!isNameValid || !isPhoneValid || !isEmailValid || !isUnitValid) {
+                if (!isNameValid) nameInput?.focus();
+                else if (!isPhoneValid) phoneInput?.focus();
+                else if (!isUnitValid) unitSelect?.focus();
+                else if (!isEmailValid) emailInput?.focus();
+                return;
+            }
+
+            const btn = document.getElementById('inq-submit-btn');
+            const successMsg = document.getElementById('inq-success-msg');
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Submitting...';
+            }
+            setTimeout(() => {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Inquiry';
+                }
+                if (successMsg) {
+                    successMsg.classList.remove('hidden');
+                }
+                document.getElementById('inquire-section-form')?.reset();
+                setTimeout(() => {
+                    successMsg?.classList.add('hidden');
+                }, 6000);
+            }, 600);
+        }
+
+        // Close modal on Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('enquireModal');
+                if (modal && !modal.classList.contains('hidden')) {
+                    closeEnquireModal();
+                }
+            }
+        });
+
+        // Close modal when clicking on backdrop
+        document.getElementById('enquireModal')?.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('enquireModal')) {
+                closeEnquireModal();
+            }
+        });
+    </script>
+
+    <!-- ================= FIXED CTAS (Mobile Only) ================= -->
+    <!-- Mobile Fixed Bottom Action Bar (Visible < md) -->
+    <div
+        class="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 backdrop-blur-xl border-t border-white/15 px-4 py-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex md:hidden items-center justify-between gap-3">
+        <!-- Call (Icon Only) -->
+        <a href="tel:+919967597929"
+            class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white/10 active:bg-white/20 text-white border border-white/10 transition-colors"
+            title="Call: +91 99675 97929" aria-label="Call +91 99675 97929">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+        </a>
+
+        <!-- WhatsApp (Icon Only) -->
+        <a href="https://wa.me/919967597929?text=Hi%20Reyansh%20Group%2C%20I%20am%20interested%20in%20Reyansh%20Vedanta%20%28Borivali%20East%29.%20Please%20share%20details%20regarding%20floor%20plans%2C%20pricing%2C%20and%20availability."
+            target="_blank" rel="noopener noreferrer"
+            class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-[#25D366] active:bg-[#20ba59] text-white shadow-md shadow-green-900/30 transition-transform active:scale-95"
+            title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.79C8.84 6.79 8.52 6.86 8.25 7.15C7.98 7.44 7.22 8.16 7.22 9.61C7.22 11.07 8.28 12.47 8.43 12.67C8.58 12.87 10.51 15.84 13.46 17.12C14.16 17.43 14.71 17.61 15.13 17.75C15.83 17.97 16.48 17.94 16.98 17.86C17.54 17.78 18.7 17.16 18.94 16.48C19.18 15.81 19.18 15.23 19.11 15.11C19.04 14.99 18.84 14.92 18.54 14.77C18.25 14.62 16.8 13.91 16.53 13.81C16.26 13.71 16.06 13.66 15.87 13.96C15.67 14.25 15.1 14.92 14.93 15.12C14.76 15.31 14.59 15.34 14.29 15.19C14 15.04 12.77 14.64 11.31 13.34C10.18 12.33 9.41 11.08 9.19 10.7C8.97 10.33 9.17 10.12 9.32 9.97C9.45 9.84 9.61 9.62 9.76 9.45C9.91 9.28 9.96 9.15 10.06 8.95C10.16 8.76 10.11 8.58 10.04 8.44C9.96 8.29 9.39 6.89 9.14 6.32C8.91 5.76 8.67 5.84 8.49 5.83C8.32 5.83 8.12 5.82 7.92 5.82L9.04 6.79Z" />
+            </svg>
+        </a>
+
+        <!-- Request Brochure (Brand Color) -->
+        <button onclick="openEnquireModal('brochure')"
+            class="flex-1 h-12 flex items-center justify-center gap-2 px-4 rounded-xl bg-brand active:bg-brand-dark text-white font-bold text-sm shadow-md shadow-brand/30 transition-transform active:scale-95 cursor-pointer"
+            aria-label="Request Brochure">
+            <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>Request Brochure</span>
+        </button>
+    </div>
+
+    <!-- ================= ENQUIRE NOW MODAL ================= -->
+    <div id="enquireModal"
+        class="fixed inset-0 z-[100] hidden bg-dark/80 backdrop-blur-md items-center justify-center px-4 transition-all duration-300">
+        <div id="enquireModalCard"
+            class="bg-dark-light border border-white/20 text-white rounded-2xl shadow-2xl w-full max-w-lg p-6 sm:p-8 relative transform scale-95 opacity-0 transition-all duration-300 overflow-hidden">
+            <!-- Decorative background glow -->
+            <div class="absolute -top-16 -right-16 w-44 h-44 bg-accent/20 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="absolute -bottom-16 -left-16 w-44 h-44 bg-brand/20 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <!-- Close button -->
+            <button onclick="closeEnquireModal()"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/10 cursor-pointer"
+                aria-label="Close Enquiry modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="flex items-center gap-2 mb-2">
+                <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 4h16v2H4V4zm0 4h10v2H4V8zm0 4h16v2H4v-2zm0 4h10v2H4v-2zm12-8h4v10h-4V8z" />
+                </svg>
+                <span class="text-xs uppercase tracking-widest text-accent font-bold">Reyansh Vedanta</span>
+            </div>
+            <h3 id="enquireModalTitle" class="text-2xl sm:text-3xl font-serif font-bold text-white mb-1.5 text-gradient">Enquire Now</h3>
+            <p id="enquireModalSubtitle" class="text-gray-300 mb-6 text-sm">Experience serene, elevated living in Borivali (East). Share your
+                details for exclusive brochures & pricing.</p>
+
+            <!-- Form -->
+            <form id="enquireModalForm" onsubmit="handleEnquirySubmit(event)" novalidate class="space-y-4 relative z-10">
+                <div>
+                    <label for="eq-name"
+                        class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Full Name
+                        *</label>
+                    <input type="text" id="eq-name" required
+                        class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:bg-white/10 focus:ring-2 focus:ring-accent focus:border-accent outline-none text-white placeholder-gray-400 transition-all text-sm"
+                        placeholder="e.g. Rahul Sharma">
+                    <p id="eq-name-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                </div>
+
+                <div>
+                    <label for="eq-phone"
+                        class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Phone Number
+                        *</label>
+                    <div class="relative flex items-center">
+                        <span class="absolute left-3.5 text-sm text-gray-400 font-medium select-none">+91</span>
+                        <input type="tel" id="eq-phone" required pattern="[0-9]{10}" maxlength="10" inputmode="numeric"
+                            placeholder="10-digit mobile number"
+                            class="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:bg-white/10 focus:ring-2 focus:ring-accent focus:border-accent outline-none text-white placeholder-gray-400 transition-all text-sm">
+                    </div>
+                    <p id="eq-phone-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="eq-email"
+                            class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Email
+                            Address</label>
+                        <input type="email" id="eq-email"
+                            class="w-full px-4 py-3 bg-white/5 border border-white/20 rounded-lg focus:bg-white/10 focus:ring-2 focus:ring-accent focus:border-accent outline-none text-white placeholder-gray-400 transition-all text-sm"
+                            placeholder="name@example.com">
+                        <p id="eq-email-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                    </div>
+                    <div>
+                        <label for="eq-unit"
+                            class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Configuration
+                            *</label>
+                        <select id="eq-unit" required
+                            class="w-full px-4 py-3 bg-[#1E293B] border border-white/20 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none text-white transition-all text-sm [&>option]:bg-slate-900 [&>option]:text-white">
+                            <option value="" disabled selected>Select BHK</option>
+                            <option value="1 BHK">1 BHK Residence</option>
+                            <option value="2 BHK">2 BHK Residence</option>
+                            <option value="Both">Both 1 & 2 BHK</option>
+                        </select>
+                        <p id="eq-unit-error" class="hidden text-xs text-rose-400 mt-1 font-medium"></p>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="eq-message"
+                        class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-1.5">Message /
+                        Preferred Visit Timing (Optional)</label>
+                    <textarea id="eq-message" rows="2"
+                        class="w-full px-4 py-2.5 bg-white/5 border border-white/20 rounded-lg focus:bg-white/10 focus:ring-2 focus:ring-accent focus:border-accent outline-none text-white placeholder-gray-400 transition-all text-sm resize-none"
+                        placeholder="Looking for floor availability, site visit schedule, etc."></textarea>
+                </div>
+
+                <button type="submit" id="eq-submit-btn"
+                    class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-3.5 px-4 rounded-lg transition-all duration-300 text-base shadow-lg shadow-brand/30 hover:shadow-brand/50 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer">
+                    <span id="eq-submit-text">Submit Enquiry</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Direct Contact Links inside Modal -->
+            <div class="mt-6 pt-5 border-t border-white/15">
+                <p class="text-xs text-center text-gray-400 mb-3 uppercase tracking-wider font-medium">Or connect
+                    directly right now</p>
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="tel:+917039706320"
+                        class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium border border-white/10 transition-colors">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>+91 70397 06320</span>
+                    </a>
+                    <a href="https://wa.me/917039706320?text=Hi%20Reyansh%20Group%2C%20I%20am%20interested%20in%20Reyansh%20Vedanta%20%28Borivali%20East%29.%20Please%20share%20details%20regarding%20floor%20plans%2C%20pricing%2C%20and%20availability."
+                        target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-xs sm:text-sm font-bold shadow-md shadow-green-900/30 transition-colors">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.04 6.79C8.84 6.79 8.52 6.86 8.25 7.15C7.98 7.44 7.22 8.16 7.22 9.61C7.22 11.07 8.28 12.47 8.43 12.67C8.58 12.87 10.51 15.84 13.46 17.12C14.16 17.43 14.71 17.61 15.13 17.75C15.83 17.97 16.48 17.94 16.98 17.86C17.54 17.78 18.7 17.16 18.94 16.48C19.18 15.81 19.18 15.23 19.11 15.11C19.04 14.99 18.84 14.92 18.54 14.77C18.25 14.62 16.8 13.91 16.53 13.81C16.26 13.71 16.06 13.66 15.87 13.96C15.67 14.25 15.1 14.92 14.93 15.12C14.76 15.31 14.59 15.34 14.29 15.19C14 15.04 12.77 14.64 11.31 13.34C10.18 12.33 9.41 11.08 9.19 10.7C8.97 10.33 9.17 10.12 9.32 9.97C9.45 9.84 9.61 9.62 9.76 9.45C9.91 9.28 9.96 9.15 10.06 8.95C10.16 8.76 10.11 8.58 10.04 8.44C9.96 8.29 9.39 6.89 9.14 6.32C8.91 5.76 8.67 5.84 8.49 5.83C8.32 5.83 8.12 5.82 7.92 5.82L9.04 6.79Z" />
+                        </svg>
+                        <span>WhatsApp Chat</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Success State Overlay -->
+            <div id="enquireSuccessState"
+                class="absolute inset-0 bg-dark-light/95 backdrop-blur-md hidden flex-col items-center justify-center text-center p-6 sm:p-8 z-20">
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3 sm:mb-4 shadow-lg shadow-emerald-500/10">
+                    <svg class="w-7 h-7 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h4 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-2 text-gradient">Thank You!</h4>
+                <p class="text-gray-300 text-xs sm:text-sm max-w-sm mb-5 leading-relaxed">
+                    Your details have been received. Our sales advisory team will get in touch with you shortly. You can now download the project brochure below:
+                </p>
+
+                <!-- Download Brochure Button -->
+                <a href="assets/vedanta-images/Reyansh Vedanta Brochure.pdf"
+                    download="Reyansh Vedanta Brochure.pdf"
+                    target="_blank"
+                    id="enquire-brochure-download-link"
+                    class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-accent to-accent-light text-dark font-bold text-sm sm:text-base shadow-xl shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2.5 mb-4 cursor-pointer">
+                    <svg class="w-5 h-5 text-dark flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    <span>Download Project Brochure (PDF)</span>
+                </a>
+
+                <button onclick="closeEnquireModal()"
+                    class="text-xs text-gray-400 hover:text-white transition-colors cursor-pointer py-1.5 px-4 rounded-lg hover:bg-white/5">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
