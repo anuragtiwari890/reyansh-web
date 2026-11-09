@@ -1,0 +1,47 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "functions": {
+        "api/enquiry.js": {
+            "memory": 256,
+            "maxDuration": 10
+        }
+    },
+    "headers": [
+        {
+            "source": "/llms.txt",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/plain; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=86400"
+                }
+            ]
+        },
+        {
+            "source": "/sitemap.xml",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/xml; charset=utf-8"
+                },
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=86400"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Robots-Tag",
+                    "value": "index, follow"
+                }
+            ]
+        }
+    ]
+}

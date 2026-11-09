@@ -1282,7 +1282,7 @@
                                     placeholder="name@example.com">
                                 <p id="fp-email-error" class="hidden text-xs text-rose-500 mt-1 font-medium"></p>
                             </div>
-                            <button type="submit"
+                            <button type="submit" id="fp-submit-btn"
                                 class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-3.5 rounded-xl transition-all duration-300 mt-4 text-sm sm:text-base shadow-md shadow-brand/25 hover:shadow-brand/40 active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer">
                                 <span>View Floor Plan</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2249,8 +2249,40 @@
             initFormValidations();
         }
 
+        // ── Shared API Submit Helper ──
+        async function submitToAPI(data) {
+            const response = await fetch('/api/enquiry', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) {
+                throw new Error(result.error || 'Something went wrong. Please try again.');
+            }
+            return result;
+        }
+
+        function setButtonLoading(btn, isLoading, loadingText = 'Submitting...', originalHTML = '') {
+            if (!btn) return;
+            btn.disabled = isLoading;
+            if (isLoading) {
+                btn._originalHTML = btn.innerHTML;
+                btn.innerHTML = `
+                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>${loadingText}</span>
+                `;
+            } else {
+                btn.innerHTML = originalHTML || btn._originalHTML || '';
+            }
+        }
+
+        // ── Floor Plan Form → API then unlock ──
         if (fpForm) {
-            fpForm.addEventListener('submit', (e) => {
+            fpForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const fpName = document.getElementById('fp-name');
                 const fpNameErr = document.getElementById('fp-name-error');
@@ -2258,6 +2290,7 @@
                 const fpPhoneErr = document.getElementById('fp-phone-error');
                 const fpEmail = document.getElementById('fp-email');
                 const fpEmailErr = document.getElementById('fp-email-error');
+                const fpSubmitBtn = document.getElementById('fp-submit-btn');
 
                 const isNameValid = validateName(fpName, fpNameErr);
                 const isPhoneValid = validatePhone(fpPhone, fpPhoneErr, true);
@@ -2270,28 +2303,45 @@
                     return;
                 }
 
-                isFloorPlanUnlocked = true;
+                setButtonLoading(fpSubmitBtn, true, 'Verifying...');
 
-                // Close form
-                closeForm();
+                try {
+                    await submitToAPI({
+                        name: fpName.value.trim(),
+                        phone: fpPhone.value.trim(),
+                        email: fpEmail?.value?.trim() || '',
+                        source: 'floor-plan',
+                    });
 
-                // Update Image to clear version
-                setTimeout(() => {
-                    fpImage.classList.add('opacity-0');
+                    // ✅ Email sent — now unlock floor plan
+                    isFloorPlanUnlocked = true;
+                    closeForm();
+
                     setTimeout(() => {
-                        fpImage.src = 'assets/vedanta-images/floor-plan.png';
-                        fpImage.classList.remove('opacity-0');
+                        fpImage.classList.add('opacity-0');
+                        setTimeout(() => {
+                            fpImage.src = 'assets/vedanta-images/floor-plan.png';
+                            fpImage.classList.remove('opacity-0');
+                            fpOverlay.classList.add('hidden');
+                            downloadBtnContainer.classList.remove('hidden');
+                            fpContainer.classList.remove('cursor-pointer', 'hover:shadow-xl');
+                        }, 300);
+                    }, 300);
 
-                        // Hide click overlay
-                        fpOverlay.classList.add('hidden');
-
-                        // Show download button
-                        downloadBtnContainer.classList.remove('hidden');
-
-                        // Remove container hover effects and cursor pointer
-                        fpContainer.classList.remove('cursor-pointer', 'hover:shadow-xl');
-                    }, 300); // Wait for fade out
-                }, 300); // Wait for form close animation
+                } catch (err) {
+                    setButtonLoading(fpSubmitBtn, false);
+                    // Show error below submit button
+                    let errEl = document.getElementById('fp-api-error');
+                    if (!errEl) {
+                        errEl = document.createElement('p');
+                        errEl.id = 'fp-api-error';
+                        errEl.className = 'text-xs text-rose-500 mt-2 font-medium text-center';
+                        fpSubmitBtn.parentNode.insertBefore(errEl, fpSubmitBtn.nextSibling);
+                    }
+                    errEl.textContent = err.message || 'Failed to submit. Please try again.';
+                    errEl.classList.remove('hidden');
+                    setTimeout(() => errEl.classList.add('hidden'), 5000);
+                }
             });
         }
 
@@ -2370,7 +2420,7 @@
             }, 250);
         }
 
-        function handleEnquirySubmit(event) {
+        async function handleEnquirySubmit(event) {
             event.preventDefault();
             const nameInput = document.getElementById('eq-name');
             const nameErr = document.getElementById('eq-name-error');
@@ -2380,6 +2430,7 @@
             const emailErr = document.getElementById('eq-email-error');
             const unitSelect = document.getElementById('eq-unit');
             const unitErr = document.getElementById('eq-unit-error');
+            const messageInput = document.getElementById('eq-message');
 
             const isNameValid = validateName(nameInput, nameErr);
             const isPhoneValid = validatePhone(phoneInput, phoneErr, true);
@@ -2395,36 +2446,45 @@
             }
 
             const submitBtn = document.getElementById('eq-submit-btn');
+            const card = document.getElementById('enquireModalCard');
             const success = document.getElementById('enquireSuccessState');
+            const loadingText = currentModalMode === 'brochure' ? 'Preparing Brochure...' : 'Submitting Enquiry...';
 
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = `
-                    <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span>${currentModalMode === 'brochure' ? 'Preparing Brochure...' : 'Submitting Enquiry...'}</span>
-                `;
-            }
+            setButtonLoading(submitBtn, true, loadingText);
 
-            setTimeout(() => {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = `
-                        <span id="eq-submit-text">${currentModalMode === 'brochure' ? 'Download Brochure' : 'Submit Enquiry'}</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    `;
-                }
+            try {
+                await submitToAPI({
+                    name: nameInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    email: emailInput?.value?.trim() || '',
+                    unit: unitSelect?.value || '',
+                    message: messageInput?.value?.trim() || '',
+                    source: currentModalMode === 'brochure' ? 'brochure' : 'enquire',
+                });
+
+                // ✅ Success — show success state
                 if (success) {
                     success.classList.remove('hidden');
                     success.classList.add('flex');
-                    card.scrollTop = 0;
+                    if (card) card.scrollTop = 0;
                 }
-            }, 600);
+            } catch (err) {
+                setButtonLoading(submitBtn, false);
+                // Show error inline
+                let errEl = document.getElementById('eq-api-error');
+                if (!errEl) {
+                    errEl = document.createElement('p');
+                    errEl.id = 'eq-api-error';
+                    errEl.className = 'text-xs text-rose-500 mt-2 font-medium text-center';
+                    submitBtn.parentNode.insertBefore(errEl, submitBtn.nextSibling);
+                }
+                errEl.textContent = err.message || 'Failed to submit. Please try again.';
+                errEl.classList.remove('hidden');
+                setTimeout(() => errEl.classList.add('hidden'), 5000);
+            }
         }
 
-        function handleInquireSectionSubmit(event) {
+        async function handleInquireSectionSubmit(event) {
             event.preventDefault();
             const nameInput = document.getElementById('inq-name');
             const nameErr = document.getElementById('inq-name-error');
@@ -2449,27 +2509,39 @@
             }
 
             const btn = document.getElementById('inq-submit-btn');
-            const btnSpan = btn ? btn.querySelector('span') : null;
             const successMsg = document.getElementById('inq-success-msg');
-            if (btn) {
-                btn.disabled = true;
-                if (btnSpan) btnSpan.textContent = 'Submitting...';
-                else btn.textContent = 'Submitting...';
-            }
-            setTimeout(() => {
-                if (btn) {
-                    btn.disabled = false;
-                    if (btnSpan) btnSpan.textContent = 'Submit Inquiry';
-                    else btn.textContent = 'Submit Inquiry';
-                }
+
+            setButtonLoading(btn, true, 'Submitting...');
+
+            try {
+                await submitToAPI({
+                    name: nameInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    email: emailInput?.value?.trim() || '',
+                    unit: unitSelect?.value || '',
+                    source: 'inquiry',
+                });
+
+                // ✅ Success
+                setButtonLoading(btn, false);
+                document.getElementById('inquire-section-form')?.reset();
                 if (successMsg) {
                     successMsg.classList.remove('hidden');
+                    setTimeout(() => successMsg.classList.add('hidden'), 6000);
                 }
-                document.getElementById('inquire-section-form')?.reset();
-                setTimeout(() => {
-                    successMsg?.classList.add('hidden');
-                }, 6000);
-            }, 600);
+            } catch (err) {
+                setButtonLoading(btn, false);
+                let errEl = document.getElementById('inq-api-error');
+                if (!errEl) {
+                    errEl = document.createElement('p');
+                    errEl.id = 'inq-api-error';
+                    errEl.className = 'text-xs text-rose-500 mt-2 font-medium text-center';
+                    btn.parentNode.insertBefore(errEl, btn.nextSibling);
+                }
+                errEl.textContent = err.message || 'Failed to submit. Please try again.';
+                errEl.classList.remove('hidden');
+                setTimeout(() => errEl.classList.add('hidden'), 5000);
+            }
         }
 
         // Close modal on Escape
